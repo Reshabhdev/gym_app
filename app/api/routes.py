@@ -2,12 +2,19 @@ from fastapi import APIRouter, HTTPException
 from app.schemas.user import UserInput, AppResponse
 from app.core.calculator import calculate_tdee, get_target_calories
 from app.services.inference import generate_workout_plan
+from sqlalchemy.ext.asyncio import AsyncSession
+from fastapi import Depends
+from app.db.database import get_db
+from app.db.models import WorkoutRequest
 
 # Initialize the router
 router = APIRouter()
 
 @router.post("/recommend", response_model=AppResponse)
-async def get_fitness_recommendation(user: UserInput):
+async def get_fitness_recommendation(
+    user: UserInput, 
+    db: AsyncSession = Depends(get_db)
+):
     try:
         # 1. Mathematical Baseline: Calculate calories
         tdee = calculate_tdee(
@@ -25,7 +32,22 @@ async def get_fitness_recommendation(user: UserInput):
             goal=user.goal
         )
         
-        # 3. Return the compiled response
+        # 3. Log request to PostgreSQL before returning
+        db_request = WorkoutRequest(
+            age=user.age,
+            gender=user.gender,
+            weight_kg=user.weight_kg,
+            height_cm=user.height_cm,
+            activity_level=user.activity_level,
+            goal=user.goal,
+            diet_preference=user.diet_preference,
+            location=user.location,
+            target_calories=target_cals
+        )
+        db.add(db_request)
+        await db.commit()
+        
+        # 4. Return the compiled response
         return AppResponse(
             target_calories=target_cals,
             workout_plan=workout_plan
