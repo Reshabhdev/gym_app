@@ -2,11 +2,16 @@ import os
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession, async_sessionmaker
 from sqlalchemy.orm import declarative_base
 
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
 # Fetch the database URL from the environment
 # Default to a local PostgreSQL instance for the gym_ai application
 DATABASE_URL = os.getenv(
     "DATABASE_URL", 
-    "postgresql+asyncpg://postgres:postgres@localhost/gym_ai"
+    "postgresql+asyncpg://rishabhdevsingh@localhost/gym_ai"
 )
 
 # Create the async engine

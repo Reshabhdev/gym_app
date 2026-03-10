@@ -12,12 +12,23 @@ async def lifespan(app: FastAPI):
     # Cleanup on shutdown
     await engine.dispose()
 
+from fastapi.middleware.cors import CORSMiddleware
+
 # Initialize the main FastAPI application
 app = FastAPI(
     title="Gym AI Industry API", 
     description="An end-to-end ML backend for personalized fitness recommendations.",
     version="1.0",
     lifespan=lifespan
+)
+
+# Add CORS so React frontend can connect
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"], # In production, restrict to localhost:3000 or specific domains
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # Include the endpoints from our routes file

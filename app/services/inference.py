@@ -33,7 +33,7 @@ def generate_workout_plan(location: str, goal: str) -> List[dict]:
     workout_plan = []
     
     # We want a full-body workout, so we ask the AI for 1 exercise per major body part
-    target_muscles = ['chest', 'legs', 'back', 'core']
+    target_muscles = ['chest', 'quadriceps', 'lats', 'abdominals']
 
     for muscle in target_muscles:
         # Create a dataframe for the exact feature request

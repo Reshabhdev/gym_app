@@ -1,0 +1,30 @@
+services:
+  # Backend API
+  - type: web
+    name: gym-ai-backend
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port 10000
+    envVars:
+      - key: DATABASE_URL
+        value: postgresql+asyncpg://zoomclonerish_user:GvOSjLYgFH7e3HZQ6SejGdpWBTVyNxKi@dpg-d68pbf15pdvs7385u490-a.oregon-postgres.render.com/gym_ai
+      - key: DEBUG
+        value: "False"
+      - key: ENVIRONMENT
+        value: production
+
+  # Frontend Web App
+  - type: web
+    name: gym-ai-frontend
+    env: node
+    plan: free
+    rootDir: web_app
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NEXT_PUBLIC_API_URL
+        fromService:
+          type: web
+          name: gym-ai-backend
+          property: url

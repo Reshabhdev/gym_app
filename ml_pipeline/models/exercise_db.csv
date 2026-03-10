@@ -96,7 +96,6 @@ Ab Roller,abdominals,other,intermediate
 Otis-Up,abdominals,other,intermediate
 Captain's chair knee raise,abdominals,other,intermediate
 Sledgehammer swing,abdominals,other,intermediate
-Decline bar press sit-up,abdominals,barbell,intermediate
 Pallof press,abdominals,other,intermediate
 Weighted Sit-Ups - With Bands,abdominals,other,intermediate
 Suitcase crunch,abdominals,other,intermediate
@@ -644,7 +643,6 @@ Exercise ball crunch,abdominals,exercise ball,intermediate
 Feet-elevated crunch,abdominals,exercise ball,intermediate
 Weighted Ball Side Bend,abdominals,exercise ball,beginner
 Swiss Ball Ab Roll-Out,abdominals,exercise ball,intermediate
-Exercise Ball Cable Crunch - Gethin Variation,abdominals,cable,intermediate
 Exercise ball squat and twist,abdominals,exercise ball,intermediate
 Swiss Ball V-Up With Foot Pass,abdominals,exercise ball,intermediate
 Exercise ball pike,abdominals,exercise ball,intermediate
@@ -938,7 +936,6 @@ Board bench press,chest,barbell,intermediate
 Barbell Bench Press-Wide Grip,chest,barbell,beginner
 Wide-Grip Decline Barbell Pullover,chest,barbell,beginner
 Barbell Guillotine Bench Press,chest,barbell,beginner
-Band-suspended kettlebell bench press,chest,bands,intermediate
 Paul Carter Incline Bench Press,chest,barbell,intermediate
 Incline bench press,chest,barbell,intermediate
 Bench press,chest,barbell,intermediate
@@ -957,7 +954,6 @@ Extended Range One-Arm Kettlebell Floor Press,chest,kettlebells,beginner
 Kettlebell alternating floor press,chest,kettlebells,beginner
 One-Arm Kettlebell Floor Press,chest,kettlebells,beginner
 Leg-Over Floor Press,chest,kettlebells,beginner
-Band-suspended kettlebell bench press,chest,bands,intermediate
 FYR2 Push-Up to Kettlebell Hike Combo,chest,kettlebells,intermediate
 Pushups,chest,body only,intermediate
 Incline Push-Up,chest,body only,intermediate
@@ -1708,7 +1704,6 @@ Sled Row,middle back,other,beginner
 Paul Carter T-Bar Row,middle back,other,intermediate
 Single-Arm Bent-Over Rear Delt Raise - Gethin Variation,middle back,other,intermediate
 30 Back Plate Hyperextension,middle back,other,intermediate
-Seated Cable Rows,middle back,cable,intermediate
 Single-arm cable seated row,middle back,cable,intermediate
 Paul Carter Lat Pull-Down,middle back,cable,intermediate
 TBS Lat Pull-Down,middle back,cable,intermediate
@@ -1729,7 +1724,6 @@ UN Cable Pull-Through,middle back,cable,intermediate
 30 Back Wide-Grip Pull-Down,middle back,cable,intermediate
 30 back Wide-Grip Seated Cable Row,middle back,cable,intermediate
 Rower,middle back,machine,intermediate
-Seated Cable Rows,middle back,cable,intermediate
 Smith machine bent-over row,middle back,machine,intermediate
 Leverage High Row,middle back,machine,beginner
 Machine Low Row,middle back,machine,intermediate
@@ -2003,7 +1997,6 @@ Bicycling,quadriceps,other,intermediate
 Hex-bar deadlift,quadriceps,other,intermediate
 Skating,quadriceps,other,beginner
 Weighted sissy squat,quadriceps,other,intermediate
-Dumbbell step-up,quadriceps,dumbbell,intermediate
 Yoke Walk,quadriceps,other,beginner
 Front Cone Hops (or hurdle hops),quadriceps,other,beginner
 Weighted Squat,quadriceps,other,beginner
@@ -2654,10 +2647,8 @@ FYR2 Seesaw Dumbbell Military Press,shoulders,dumbbell,intermediate
 FYR2 Single-Dumbbell Halo,shoulders,dumbbell,intermediate
 FYR2 Single-Dumbbell Overhead Press,shoulders,dumbbell,intermediate
 Car driver,shoulders,other,intermediate
-Arnold press,shoulders,dumbbell,intermediate
 Front Plate Raise,shoulders,other,intermediate
 Battle ropes,shoulders,other,intermediate
-Seated rear delt fly,shoulders,dumbbell,intermediate
 Circus Bell,shoulders,other,beginner
 Landmine Linear Jammer,shoulders,other,intermediate
 Crucifix,shoulders,other,beginner
@@ -2917,3 +2908,433 @@ Lying Close-Grip Barbell Triceps Press To Chin,triceps,e-z curl bar,beginner
 EZ-Bar Skullcrusher - Gethin Variation,triceps,e-z curl bar,intermediate
 TBS Skullcrusher,triceps,e-z curl bar,intermediate
 30 Arms EZ-Bar Skullcrusher,triceps,e-z curl bar,intermediate
+Incline dumbbell press,chest,unknown,unknown
+Incline cable crossovers,chest,unknown,unknown
+Incline dumbbell flyes,chest,unknown,unknown
+Decline dumbbell press,chest,unknown,unknown
+Decline cable crossovers,chest,unknown,unknown
+Decline dumbbell flyes,chest,unknown,unknown
+Chest flyes,chest,unknown,unknown
+Cable crossovers,chest,unknown,unknown
+Dumbbell flyes,chest,unknown,unknown
+Pull-ups,back,unknown,unknown
+Barbell rows,back,unknown,unknown
+Dumbbell rows,back,unknown,unknown
+Seated cable rows,back,unknown,unknown
+Bent-over rows,back,unknown,unknown
+Hyperextensions,back,unknown,unknown
+Bird dog,back,unknown,unknown
+Barbell curls,arms,unknown,unknown
+Dumbbell curls,arms,unknown,unknown
+Preacher curls,arms,unknown,unknown
+Hammer curls,arms,unknown,unknown
+Concentration curls,arms,unknown,unknown
+Overhead triceps extensions,arms,unknown,unknown
+Triceps pushdowns,arms,unknown,unknown
+Skull crushers,arms,unknown,unknown
+Triceps dips,arms,unknown,unknown
+Barbell squats,legs,unknown,unknown
+Leg press,legs,unknown,unknown
+Leg extensions,legs,unknown,unknown
+Romanian deadlifts,legs,unknown,unknown
+Leg curls,legs,unknown,unknown
+Barbell hip thrusts,legs,unknown,unknown
+Donkey kicks,legs,unknown,unknown
+Standing calf raises,legs,unknown,unknown
+Seated calf raises,legs,unknown,unknown
+Dumbbell front raises,shoulders,unknown,unknown
+Lateral raises,shoulders,unknown,unknown
+Bent-over lateral raises,shoulders,unknown,unknown
+Face pulls,shoulders,unknown,unknown
+Leg raises,abs,unknown,unknown
+Bicycle crunches,abs,unknown,unknown
+Russian twists,abs,unknown,unknown
+Hanging leg raises,abs,unknown,unknown
+Plank,abs,unknown,unknown
+Wrist curl,forearms,unknown,unknown
+Wrist extension,forearms,unknown,unknown
+Plate pinch,forearms,unknown,unknown
+Towel pull-up,forearms,unknown,unknown
+Fat grip dumbbell curl,forearms,unknown,unknown
+Neck Flexion,"sternocleidomastoid,",cable,beginner
+Lateral Neck Flexion,"sternocleidomastoid,",lever (plate loaded),beginner
+Wall Front Neck Bridge,"sternocleidomastoid,",body weight,intermediate
+Wall Side Neck Bridge,"sternocleidomastoid,",body weight,intermediate
+Neck Extension,"splenius,",cable,beginner
+Seated Neck Extension,"splenius,",weighted,beginner
+Seated Neck Extension:  Harness,"splenius,",weighted,intermediate
+Neck Retraction,"splenius,",band resistive,beginner
+Wall Rear Neck Bridge,"splenius,",body weight,intermediate
+Lying Neck Retraction,"splenius,",isometric,beginner
+Front Raise,"anterior deltoid,",barbell,beginner
+Military Press,"anterior deltoid,",barbell,expert
+Military Press:  Seated,"anterior deltoid,",barbell,intermediate
+Front Raise:  Alternating,"anterior deltoid,",cable,beginner
+Front Raise:  One Arm,"anterior deltoid,",cable,beginner
+Shoulder Press,"anterior deltoid,",cable,intermediate
+Shoulder Press:  Seated,"anterior deltoid,",cable,intermediate
+Arnold Press,"anterior deltoid,",dumbbell,expert
+Shoulder Press:  One Arm,"anterior deltoid,",dumbbell,intermediate
+Reclined Shoulder Press,"anterior deltoid,",lever (plate loaded),intermediate
+Shoulder Press:  Parallel Grip,"anterior deltoid,",lever (selectorized)​​​​​​​,intermediate
+Pike Press (between benches),"anterior deltoid,",body weight,expert
+Pike Press (between benches):  Elevated (between benches),"anterior deltoid,",body weight,expert
+Upright Row,"lateral deltoid,",barbell,intermediate
+Lateral Raise,"lateral deltoid,",cable,beginner
+Lateral Raise:  One Arm,"lateral deltoid,",cable,beginner
+Upright Row:  One Arm,"lateral deltoid,",cable,intermediate
+Upright Row:  with rope,"lateral deltoid,",cable,intermediate
+Y Raise,"lateral deltoid,",cable,intermediate
+Incline Lateral Raise,"lateral deltoid,",dumbbell,intermediate
+Lateral Raise:  other machine,"lateral deltoid,",lever (selectorized),beginner
+Upright Row​​​​​​​,"lateral deltoid,",smith,intermediate
+Rear Delt Row,"posterior deltoid,",barbell,intermediate
+Reverse Fly,"posterior deltoid,",cable,beginner
+Rear Delt Row:  Standing Rear Delt Row (stirrups),"posterior deltoid,",cable,intermediate
+Rear Lateral Raise,"posterior deltoid,",cable,beginner
+Seated Rear Lateral Raise,"posterior deltoid,",dumbbell,beginner
+Lying Rear Lateral Raise,"posterior deltoid,",lever (plate loaded),beginner
+Seated Rear Delt Row,"posterior deltoid,",lever (plate loaded),intermediate
+Seated Rear Delt Row:  alternative machine,"posterior deltoid,",lever (plate loaded),intermediate
+Seated Reverse Fly,"posterior deltoid,",lever (selectorized),beginner
+Seated Reverse Fly:  pronated grip,"posterior deltoid,",lever (selectorized),beginner
+Rear Delt Inverted Row (high bar),"posterior deltoid,",body weight,expert
+Rear Delt Inverted Row (on hips),"posterior deltoid,",body weight,expert
+Front Lateral Raise,"supraspinatus,",cable,beginner
+Full Can Lateral Raise,"supraspinatus,",dumbbell,beginner
+Lying Lateral Raise,"lateral deltoid,",dumbbell,beginner
+Triceps Dip,"triceps brachii,",assisted,expert
+Triceps Dip:  kneeling,"triceps brachii,",assisted,intermediate
+Close Grip Bench Press,"triceps brachii,",barbell,intermediate
+Lying Triceps Extension,"triceps brachii,",barbell,intermediate
+Lying Triceps Extension:  Skull Crusher,"triceps brachii,",barbell,intermediate
+Triceps Extension,"triceps brachii,",barbell,beginner
+Bent-over Triceps Extension,"triceps brachii,",cable,beginner
+Pushdown,"triceps brachii,",cable,beginner
+Pushdown:  One Arm,"triceps brachii,",cable,beginner
+Pushdown:  with back support,"triceps brachii,",cable,beginner
+Pushdown:  with V-bar attachment,"triceps brachii,",cable,beginner
+Triceps Extension:  with rope,"triceps brachii,",cable,beginner
+Kickback,"triceps brachii,",dumbbell,beginner
+One Arm Triceps Extension (on bench),"triceps brachii,",dumbbell,beginner
+Triceps Dip:  alternative machine,"triceps brachii,",lever (selectorized),expert
+Triceps Extension:  with preacher pad New!,"triceps brachii,",lever (selectorized),intermediate
+Standing Triceps Dip,"triceps brachii,",sled,intermediate
+Bench Dip,"triceps brachii,",weighted,intermediate
+Bench Dip:  heel on floor,"triceps brachii,",body weight,beginner
+Close Grip Push-up,"triceps brachii,",body weight,intermediate
+Close Grip Push-up:  on knees,"triceps brachii,",body weight,beginner
+Close Grip Push-up:  Incline on bar,"triceps brachii,",body weight,intermediate
+Curl,"biceps brachii,",barbell,beginner
+Alternating Curl,"biceps brachii,",cable,beginner
+Curl:  with stirrups,"biceps brachii,",cable,beginner
+Curl:  One Arm Curl,"biceps brachii,",cable,beginner
+Incline Curl,"biceps brachii,",dumbbell,intermediate
+Inverted Biceps Row,"biceps brachii,",body weight,intermediate
+Prone Incline Curl,"brachialis,",barbell,intermediate
+Concentration Curl,"brachialis,",cable,beginner
+Preacher Curl: Stirrups,"brachialis,",cable,intermediate
+Preacher Curl: arms high,"brachialis,",lever (plate loaded),intermediate
+Arm Curl,"brachialis,",suspended,beginner
+Reverse Curl,"brachioradialis,",barbell,beginner
+Hammer Curl,"brachioradialis,",cable,beginner
+Reverse Curl​​​​​​​,"brachioradialis,",lever (selectorized),beginner
+Wrist Curl,"wrist flexors,",barbell,beginner
+Grip,"wrist flexors,",lever (plate loaded),beginner
+One Hand Grip,"wrist flexors,",sled (selectorized),beginner
+One Hand​​​​​​​,"wrist flexors,",sled (plate loaded),beginner
+Reverse Wrist Curl,"wrist extensors,",barbell,beginner
+Seated Pronation ,"pronators,",dumbbell,beginner
+Seated Supination,"supinator,",dumbbell,beginner
+Bent-over Row,"latissimus dorsi, lower trapezius, rhomboids, middle trapezius,",barbell,intermediate
+Bent-over Row:  Underhand,"latissimus dorsi, lower trapezius, rhomboids, middle trapezius,",barbell,intermediate
+One Arm Bent-over Row,"latissimus dorsi, lower trapezius, rhomboids, middle trapezius,",cable,intermediate
+One Arm Straight Back Seated High Row,"latissimus dorsi, lower trapezius, rhomboids, middle trapezius,",cable,intermediate
+Seated Row,"latissimus dorsi, lower trapezius, rhomboids, middle trapezius,",cable,beginner
+Seated Row:  Straight Back,"latissimus dorsi, lower trapezius, rhomboids, middle trapezius,",cable,beginner
+Seated Wide Grip Row,"latissimus dorsi, lower trapezius, rhomboids, middle trapezius,",cable,beginner
+Seated Wide Grip Row:  Straight Back,"latissimus dorsi, lower trapezius, rhomboids, middle trapezius,",cable,beginner
+Lying Row,"latissimus dorsi, lower trapezius, rhomboids, middle trapezius,",dumbbell,beginner
+Incline Row,"latissimus dorsi, lower trapezius, rhomboids, middle trapezius,",lever (plate loaded),intermediate
+Incline Row:  Close Grip,"latissimus dorsi, lower trapezius, rhomboids, middle trapezius,",lever (plate loaded),intermediate
+Seated Rows,"latissimus dorsi, lower trapezius, rhomboids, middle trapezius,",lever (plate loaded),beginner
+Seated Rows:  Narrow Grip,"latissimus dorsi, lower trapezius, rhomboids, middle trapezius,",lever (plate loaded),beginner
+"Seated Rows:  Wide Grip
+
+Low Bar
+
+","latissimus dorsi, lower trapezius, rhomboids, middle trapezius,",lever (plate loaded),beginner
+Seated Rows (Others),"latissimus dorsi, lower trapezius, rhomboids, middle trapezius,",lever (plate loaded),beginner
+Seated Rows (Others):  Seated Low Row,"latissimus dorsi, lower trapezius, rhomboids, middle trapezius,",lever (plate loaded),beginner
+Seated Rows (Others):  Seated High Row,"latissimus dorsi, lower trapezius, rhomboids, middle trapezius,",lever (plate loaded),beginner
+T-bar Row,"latissimus dorsi,",lever (plate loaded),intermediate
+T-bar Row:  Close grip,"latissimus dorsi, lower trapezius, rhomboids, middle trapezius,",lever (plate loaded),intermediate
+Seated Row:  Wide Grip,"latissimus dorsi, lower trapezius, rhomboids, middle trapezius,",lever (selectorized),beginner
+Seated Row (no chest pad),"latissimus dorsi, lower trapezius, rhomboids, middle trapezius,",lever (selectorized),intermediate
+Seated Row (no chest pad):  Straight Back,"latissimus dorsi, lower trapezius, rhomboids, middle trapezius,",lever (selectorized),intermediate
+Underhand Seated Row,"latissimus dorsi, lower trapezius, rhomboids, middle trapezius,",lever (selectorized),beginner
+Inverted Row,"latissimus dorsi, lower trapezius, rhomboids, middle trapezius,",weighted,intermediate
+Inverted Row:  Feet Elevated,"latissimus dorsi, lower trapezius, rhomboids, middle trapezius,",body weight,expert
+Inverted Row:  High Bar,"latissimus dorsi, lower trapezius, rhomboids, middle trapezius,",body weight,intermediate
+Inverted Row:  On Hips,"latissimus dorsi, lower trapezius, rhomboids, middle trapezius,",body weight,intermediate
+Inverted Row:  One Arm,"latissimus dorsi, lower trapezius, rhomboids, middle trapezius,",suspended,expert
+Row,"latissimus dorsi, lower trapezius, rhomboids, middle trapezius,",suspended,beginner
+Row:  One Arm,"latissimus dorsi, lower trapezius, rhomboids, middle trapezius,",suspended,intermediate
+Pull-up (open-centered bar),"latissimus dorsi, teres major, lower trapezius, rhomboids,",assisted (machine),expert
+Pull-up (open-centered bar):  Standing,"latissimus dorsi, teres major, lower trapezius, rhomboids,",assisted (machine),expert
+Parallel Close Grip Pull-up,"latissimus dorsi, teres major, lower trapezius, rhomboids,",assisted (machine),expert
+Pullover,"latissimus dorsi, teres major, lower trapezius, rhomboids,",barbell,beginner
+Bent-over Pullover,"latissimus dorsi, teres major, lower trapezius, rhomboids,",cable,intermediate
+Close Grip Pulldown,"latissimus dorsi, teres major, lower trapezius, rhomboids,",cable,beginner
+Pulldown,"latissimus dorsi, teres major, lower trapezius, rhomboids,",cable,beginner
+Pulldown:  Parallel Grip Pulldown,"latissimus dorsi, teres major, lower trapezius, rhomboids,",cable,beginner
+Pullup/Chinup,"latissimus dorsi, teres major, lower trapezius, rhomboids,",cable,expert
+Pullup/Chinup:  Chinup,"latissimus dorsi, teres major, lower trapezius, rhomboids,",cable,expert
+Pullup/Chinup:  Parallel Close Grip Pull-up,"latissimus dorsi, teres major, lower trapezius, rhomboids,",cable,expert
+Pullup/Chinup:  Parallel Grip Pull-up,"latissimus dorsi, teres major, lower trapezius, rhomboids,",cable,expert
+Pullup/Chinup:  Pull-up,"latissimus dorsi, teres major, lower trapezius, rhomboids,",cable,expert
+Underhand Pulldown,"latissimus dorsi, teres major, lower trapezius, rhomboids,",cable,beginner
+Front Pulldown,"latissimus dorsi, teres major, lower trapezius, rhomboids,",lever (selectorized),beginner
+Chin-up,"latissimus dorsi, teres major, lower trapezius, rhomboids,",weighted,expert
+Archer Pull-up,"latissimus dorsi, teres major, lower trapezius, rhomboids,",band-assisted,expert
+Pull-up:  Parallel Grip,"latissimus dorsi, teres major, lower trapezius, rhomboids,",band-assisted,expert
+One Arm Pull-up New!,"latissimus dorsi, teres major, lower trapezius, rhomboids,",body weight,expert
+Pull-up:  Self-assisted,"latissimus dorsi, teres major, lower trapezius, rhomboids,",suspension,intermediate
+Shrug,"upper trapezius, levator scapulae, middle trapezius,",barbell,beginner
+Trap Bar Shrug,"upper trapezius, levator scapulae, middle trapezius,",barbell,beginner
+Shrug with Stirrups,"upper trapezius, levator scapulae, middle trapezius,",cable,beginner
+Seated Shrug,"upper trapezius, levator scapulae, middle trapezius,",lever (plate loaded),beginner
+Gripless Shrug,"upper trapezius, levator scapulae, middle trapezius,",sled,beginner
+Inverted Shrug,"upper trapezius, levator scapulae, middle trapezius,",body weight,beginner
+Seated Shoulder External Rotation,"infraspinatus, teres minor,",cable,beginner
+Seated Shoulder External Rotation:  Standing,"infraspinatus, teres minor,",cable,beginner
+Lying Shoulder External Rotation,"infraspinatus, teres minor,",dumbbell,beginner
+Upright Shoulder External Rotation (with support),"infraspinatus, teres minor,",dumbbell,beginner
+Shoulder External Rotation,"infraspinatus, teres minor,",lever (plate loaded),beginner
+Standing Shoulder Internal Rotation,"subscapularis,",cable,beginner
+Shoulder Internal Rotation,"subscapularis,",dumbbell,beginner
+Shoulder Internal Rotation:  on floor,"subscapularis,",dumbbell,beginner
+Shoulder Internal Rotation​​​​​​​,"subscapularis,",lever (selectorized),beginner
+Chest Dip,"pectoralis major sternal,",assisted,intermediate
+Chest Dip:  kneeling,"pectoralis major sternal,",assisted,beginner
+Bench Press,"pectoralis major sternal,",barbell,intermediate
+Bench Press:  Power Lift,"pectoralis major sternal,",barbell,expert
+Decline Bench Press,"pectoralis major sternal,",barbell,intermediate
+Flies,"pectoralis major sternal,",cable,beginner
+Flies:  Lying Fly,"pectoralis major sternal,",cable,beginner
+Flies:  Seated Fly,"pectoralis major sternal,",cable,beginner
+Flies:  Standing Fly,"pectoralis major sternal,",cable,beginner
+Presses,"pectoralis major sternal,",cable,intermediate
+Presses:  Bench Press,"pectoralis major sternal,",cable,intermediate
+"Presses:  Chest Press
+
+Standing
+
+","pectoralis major sternal,",cable,intermediate
+Presses:  Decline Chest Press,"pectoralis major sternal,",cable,intermediate
+Fly,"pectoralis major sternal,",dumbbell,beginner
+Chest Press,"pectoralis major sternal,",lever (plate loaded),intermediate
+Decline Chest Press,"pectoralis major sternal,",lever (plate loaded),intermediate
+Flies:  Pec Deck Fly,"pectoralis major sternal,",lever (selectorized),beginner
+"Presses:  Chest Press
+
+alternative machine
+
+","pectoralis major sternal,",lever (selectorized),intermediate
+Standing Chest Dip,"pectoralis major sternal,",sled,intermediate
+Push-up:  Archer,"pectoralis major sternal,",body weight,intermediate
+Push-up:  Incline,"pectoralis major sternal,",body weight,beginner
+Push-up:  on knees,"pectoralis major sternal,",body weight,beginner
+Clap Push-up,pectoralis major sternal,plyometric,expert
+Depth Push-up,pectoralis major sternal,plyometric,intermediate
+Incline Bench Press,"pectoralis major clavicular,",barbell,intermediate
+Incline Chest Press,"pectoralis major clavicular,",cable,intermediate
+Incline Fly,"pectoralis major clavicular,",cable,beginner
+Incline Chest Press:  on Military Press Machine,"pectoralis major clavicular,",lever (plate loaded),intermediate
+Incline Chest Press​​​​​​​,"pectoralis major clavicular,",lever (selectorized),intermediate
+Decline Push-up,"pectoralis major clavicular,",body weight,intermediate
+Decline Push-up:  on stability ball,"pectoralis major clavicular,",body weight,expert
+Chest Dip ,"pectoralis major sternal,",assisted  chest dip  ,intermediate
+Standing Fly ,"pectoralis major sternal,",cable  standing fly  ,beginner
+Incline Shoulder Raise,"serratus anterior,",barbell,beginner
+Push-up Plus,"serratus anterior,",body weight,intermediate
+Bent Knee Good-morning,"gluteus maximus,",barbell,intermediate
+Deadlifts,"gluteus maximus,",barbell,expert
+"Deadlifts:  Stiff-leg Deadlift
+
+Straight-back
+
+","gluteus maximus,",barbell,expert
+Hip Thrust,"gluteus maximus,",barbell,intermediate
+Lunge,"gluteus maximus,",barbell,intermediate
+Lunge:  Rear Lunge,"gluteus maximus,",barbell,intermediate
+Single Leg Split Squat,"gluteus maximus,",barbell,expert
+Single Leg Split Squat:  Single Leg Squat,"gluteus maximus,",barbell,expert
+Single Leg Split Squat:  Split Squat,"gluteus maximus,",barbell,intermediate
+Squat,"gluteus maximus,",barbell,expert
+Squat:  Front Squat,"gluteus maximus,",barbell,expert
+Squat:  Full Squat,"gluteus maximus,",barbell,expert
+Squat:  Safety Squat,"gluteus maximus,",barbell,expert
+Step-up,"gluteus maximus,",barbell,intermediate
+Rear Lunge,"gluteus maximus,",cable,intermediate
+Split Squat,"gluteus maximus,",cable,intermediate
+Split Squat:  Two Arms,"gluteus maximus,",cable,intermediate
+Standing Hip Extension,"gluteus maximus,",cable,beginner
+Standing Hip Extension:  Bent-over,"gluteus maximus,",cable,beginner
+Stiff-leg Deadlift,"gluteus maximus,",cable,expert
+Stiff-leg Deadlift:  Straight-back,"gluteus maximus,",cable,expert
+Step-up:  Step Down,"gluteus maximus,",dumbbell,intermediate
+Deadlift,"gluteus maximus,",lever (plate loaded),expert
+"Deadlift:  Stiff-leg Deadlift
+
+Straight-back
+
+","gluteus maximus,",lever (plate loaded),expert
+Leg Presses,"gluteus maximus,",lever (plate loaded),intermediate
+Leg Presses:  45° Leg Press,"gluteus maximus,",lever (plate loaded),intermediate
+Leg Presses:  Lying Leg Press,"gluteus maximus,",lever (plate loaded),intermediate
+Leg Presses:  Seated Leg Press,"gluteus maximus,",lever (plate loaded),intermediate
+Lying Hip Extension,"gluteus maximus,",lever (plate loaded),beginner
+Reverse Hyper-extension,"gluteus maximus,",lever (plate loaded),intermediate
+Hip Extensions,"gluteus maximus,",lever (selectorized),beginner
+Hip Extensions:  Bent-over,"gluteus maximus,",lever (selectorized),beginner
+Hip Extensions:  Lying,"gluteus maximus,",lever (selectorized),beginner
+"Hip Extensions:  Standing
+
+alternative machine
+
+","gluteus maximus,",lever (selectorized),beginner
+Glute Kickback:  Bent-over,"gluteus maximus,",lever (selectorized),beginner
+Glute Kickback:  Kneeling,"gluteus maximus,",lever (selectorized),beginner
+Glute Kickback:  Standing,"gluteus maximus,",lever (selectorized),beginner
+Squat:  V-Squat,"gluteus maximus,",lever (selectorized),expert
+Squat:  Hack Squat,"gluteus maximus,",sled,expert
+Single Leg Squat,"gluteus maximus,",weighted,expert
+Split Squat:  Single Leg Split Squat,"gluteus maximus,",body weight,expert
+Single Leg Stiff Leg Deadlift,gluteus maximus,body weight,expert
+Single Leg Squat (leg wrapped),"gluteus maximus,",self-assisted​​​​​​​,expert
+Step Down,"gluteus maximus,",self-assisted​​​​​​​,intermediate
+Hip Bridge,"gluteus maximus,",suspended,beginner
+Hip Abduction,"hip abductors,",cable,beginner
+Seated Hip Internal Rotation,"hip abductors,",cable,beginner
+Lying Hip Abduction,"hip abductors,",dumbbell,beginner
+Seated Hip Abduction,"hip abductors,",lever (plate loaded),beginner
+Standing Hip Abduction,"hip abductors,",lever (selectorized),beginner
+Twist,hip flexors,cable (pull side),beginner
+Side Bend,hip flexors,suspended,beginner
+Assisted Wheel Rollout,hip flexors,cable,intermediate
+Lying Leg Raise,hip flexors,cable,beginner
+Lying Leg Raise:  on bench,hip flexors,cable,beginner
+Lying Leg Raise:  Straight Leg,hip flexors,cable,intermediate
+Standing Leg Raise,hip flexors,cable,beginner
+Standing Leg Raise:  Straight Leg,hip flexors,cable,intermediate
+Hip Flexion,hip flexors,lever,beginner
+Vertical Leg Raise,hip flexors,lever,expert
+Decline Sit-up,hip flexors,weighted,intermediate
+Hanging Leg Raise,hip flexors,weighted,expert
+Hanging Leg Raise:  Straight Leg,hip flexors,weighted,expert
+Incline Leg Raise,hip flexors,weighted,intermediate
+Incline Leg Raise:  arms on pads,hip flexors,weighted,intermediate
+Incline Straight Leg Raise,hip flexors,weighted,expert
+Incline Straight Leg Raise:  arms on pads,hip flexors,weighted,expert
+Roman Chair Sit-up,hip flexors,weighted,intermediate
+Seated Leg Raise,hip flexors,weighted,beginner
+Vertical Leg Raise:  on Parallel Bars,hip flexors,weighted,expert
+Vertical Leg Raise:  Straight Leg,hip flexors,weighted,expert
+Leg Raises,hip flexors,body weight,intermediate
+"Leg Raises:  Hanging Leg Raise
+
+with ab straps
+Straight Leg
+
+",hip flexors,body weight,expert
+"Leg Raises:  Incline Leg Raise
+
+arms on pads
+
+",hip flexors,body weight,intermediate
+"Leg Raises:  Incline Straight Leg Raise
+
+arms on pads
+
+",hip flexors,body weight,expert
+"Leg Raises:  Lying Leg Raise
+
+Alternating
+on floor
+
+",hip flexors,body weight,beginner
+"Leg Raises:  Lying Straight Leg Raise
+
+Alternating
+
+",hip flexors,body weight,intermediate
+Leg Raises:  Seated Leg Raise,hip flexors,body weight,beginner
+"Leg Raises:  Vertical Leg Raise
+
+on parallel bars
+Straight Leg
+
+",hip flexors,body weight,expert
+Jack-knife on Ball,hip flexors,body weight,intermediate
+Wheel,hip flexors,body weight,intermediate
+Wheel:  Jack-Knife,hip flexors,body weight,expert
+Wheel:  Rollout,hip flexors,body weight,expert
+Wheel:  Pike,hip flexors,body weight,expert
+Discs,hip flexors,body weight,intermediate
+Discs:  Pike,hip flexors,body weight,expert
+Mountain Climber,hip flexors,suspended,intermediate
+Pike,hip flexors,suspended,intermediate
+Single Leg Split Squat:  Side Split Squat,"quadriceps,",barbell,expert
+Squat:  Trap Bar Squat,"quadriceps,",barbell,intermediate
+Single Leg Squat (plate loaded),"quadriceps,",lever (plate loaded),expert
+Squat:  Barbell Machine,"quadriceps,",lever (plate loaded),intermediate
+Leg Extension,"quadriceps,",lever (selectorized),beginner
+V-Squat,"quadriceps,",lever (selectorized),intermediate
+Single Leg Squat:  Box,"quadriceps,",body weight,expert
+Step-up:  Step-down,"quadriceps,",body weight,intermediate
+Glute-Ham Raise,"hamstrings,",barbell,expert
+Good-morning,"hamstrings,",barbell,intermediate
+Hyperextension,"hamstrings,",barbell,beginner
+Hyperextension (45°),"hamstrings,",barbell,beginner
+Straight-leg Deadlift,"hamstrings,",barbell,intermediate
+Straight-leg Deadlift:  Straight-back,"hamstrings,",barbell,intermediate
+Lying Leg Curl,"hamstrings,",cable,beginner
+Straight-back Straight-leg Deadlift,"hamstrings,",cable,intermediate
+Kneeling Leg Curl,"hamstrings,",lever (plate loaded),beginner
+Bent-over Leg Curl,hamstrings,lever (selectorized),beginner
+Hamstring Raise,"hamstrings,",band-assisted,intermediate
+Glute-Ham Raise:  hands behind hips,"hamstrings,",body weight,expert
+Single Leg Hanging Hamstring Bridge,"hamstrings,",body weight,expert
+Single Leg 45° Hyperextension,"hamstrings,",body weight,intermediate
+Straight Hip Leg Curl (on ball),"hamstrings,",body weight,intermediate
+Inverse Leg Curl,"hamstrings,",self-assisted,intermediate
+Leg Curl,"hamstrings,",suspended,beginner
+Hanging Leg Curl,"hamstrings,",suspended,intermediate
+Straight Hip Leg Curl,"hamstrings,",suspended,intermediate
+Hip Adduction,"hip adductors,",cable,beginner
+Seated Hip Adduction,"hip adductors,",lever (plate loaded),beginner
+Standing Hip Adduction,"hip adductors,",lever (selectorized),beginner
+Lying Hip Adduction,"hip adductors,",weighted,beginner
+Standing Calf Raise:  One Arm Single Leg Calf Raise,"gastrocnemius,",cable,intermediate
+Standing Calf Raise:  Single Leg,"gastrocnemius,",dumbbell,intermediate
+45° Calf Press,"gastrocnemius,",lever (plate loaded),intermediate
+Calf Extension,"gastrocnemius,",lever (plate loaded),beginner
+Seated Calf Press,"gastrocnemius,",lever (plate loaded),beginner
+45° Calf Raise,"gastrocnemius,",lever (selectorized),intermediate
+Donkey Calf Raise,"gastrocnemius,",lever (selectorized),intermediate
+Lying Calf Press,"gastrocnemius,",sled,beginner
+Single Leg Calf Raise,"gastrocnemius,",weighted,intermediate
+Forward Angled Single Leg Calf Raise,"gastrocnemius,",suspended,intermediate
+Safety Barbell Seated Calf Raise,"soleus,",barbell,beginner
+Safety Bar Reverse Calf Raise,"tibialis anterior,",barbell,intermediate
+Reverse Calf Raise,"tibialis anterior,",cable,beginner
+Reverse Calf Raise:  Single Leg,"tibialis anterior,",cable,intermediate
+45° Reverse Calf Press,"tibialis anterior,",lever (plate loaded),intermediate
+45° Reverse Calf Raise,"tibialis anterior,",lever (plate loaded),intermediate
+Reverse Calf Extension,"tibialis anterior,",lever (plate loaded),beginner
+45° Reverse Calf Raise (plate loaded),"tibialis anterior,",sled,intermediate
+45° Reverse Calf Raise (on hack press),"tibialis anterior,",sled,intermediate
+Hack Reverse Calf Raise,"tibialis anterior,",sled,intermediate
+Lying Reverse Calf Press,"tibialis anterior,",sled,beginner
+Seated Reverse Calf Press,"tibialis anterior,",sled,beginner
