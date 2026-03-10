@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import React, { useState } from "react";
-import { MoveRight, RefreshCcw, Activity } from "lucide-react";
+import { MoveRight, RefreshCcw, Activity, Flame, Dumbbell, Utensils, Target, ChevronDown, ChevronRight } from "lucide-react";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from "recharts";
 
 const COLORS = ['#10b981', '#06b6d4', '#3b82f6', '#8b5cf6', '#ec4899', '#f43f5e', '#facc15', '#a855f7'];
@@ -83,132 +83,199 @@ export default function FormPage() {
 
                 {/* Results Section */}
                 {results && (
-                    <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-8 backdrop-blur-md animate-in fade-in slide-in-from-bottom-4 duration-700">
-                        <div className="flex items-center gap-3 mb-6">
-                            <Activity className="w-8 h-8 text-emerald-400" />
-                            <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-cyan-400">
-                                Your AI-Powered Plan
-                            </h2>
-                        </div>
+                    <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-black/60 p-8 md:p-12 backdrop-blur-2xl shadow-[0_0_80px_-20px_rgba(16,185,129,0.3)] animate-in zoom-in-95 fade-in duration-700">
+                        {/* Decorative dynamic glows */}
+                        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-emerald-500/70 to-transparent" />
+                        <div className="absolute -top-32 -right-32 w-96 h-96 bg-emerald-500/10 rounded-full blur-[100px] pointer-events-none" />
+                        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-64 bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none" />
 
-                        <div className="grid md:grid-cols-2 gap-8">
-                            <div className="space-y-4">
-                                <h3 className="text-xl font-semibold text-white/90 border-b border-white/10 pb-2">Nutrition Target</h3>
-                                <div className="bg-black/40 rounded-xl p-6 border border-white/5">
-                                    <div className="text-4xl font-black text-emerald-400 mb-2">
-                                        {results.target_calories} <span className="text-lg text-white/50 font-normal">kcal/day</span>
+                        <div className="relative z-10">
+                            <div className="flex flex-col items-center justify-center text-center mb-12 space-y-4">
+                                <div className="p-4 bg-gradient-to-br from-emerald-500/20 to-cyan-500/10 rounded-3xl ring-1 ring-emerald-500/30 shadow-[0_0_30px_rgba(16,185,129,0.2)]">
+                                    <Activity className="w-10 h-10 text-emerald-400" />
+                                </div>
+                                <h2 className="text-4xl md:text-6xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-white via-white/90 to-emerald-400/50">
+                                    Your Elite Plan
+                                </h2>
+                                <p className="text-white/40 text-lg md:text-xl font-light max-w-xl">
+                                    Precision-engineered for your biometrics. Time to execute.
+                                </p>
+                            </div>
+
+                            <div className="grid md:grid-cols-2 gap-8 mb-12">
+                                <div className="space-y-5">
+                                    <div className="flex items-center gap-3 pb-3 border-b border-white/5">
+                                        <div className="p-2 bg-orange-500/10 rounded-xl">
+                                            <Flame className="w-5 h-5 text-orange-400" />
+                                        </div>
+                                        <h3 className="text-2xl font-bold text-white/90 tracking-tight">Daily Target</h3>
                                     </div>
-                                    <p className="text-white/60">Optimized for your exact biometrics and selected goal.</p>
+                                    <div className="group relative bg-gradient-to-b from-white/[0.08] to-transparent rounded-3xl p-8 border border-white/[0.05] overflow-hidden transition-all duration-500 hover:border-orange-500/30 hover:bg-white/[0.1] hover:shadow-[0_0_40px_-15px_rgba(249,115,22,0.2)]">
+                                        <div className="absolute top-0 right-0 p-6 opacity-[0.03] transition-transform duration-700 group-hover:scale-125 group-hover:-rotate-12 group-hover:opacity-10 translate-x-8 -translate-y-8">
+                                            <Flame className="w-48 h-48 text-orange-500" />
+                                        </div>
+                                        <div className="relative z-10 flex flex-col h-full justify-center">
+                                            <div className="text-7xl font-black text-transparent bg-clip-text bg-gradient-to-br from-white to-white/50 mb-4 tracking-tighter">
+                                                {results.target_calories}
+                                            </div>
+                                            <div className="text-2xl font-medium tracking-wide text-orange-400 mb-6 flex items-center gap-2">
+                                                KCAL <span className="w-1.5 h-1.5 rounded-full bg-orange-500/50" /> DAY
+                                            </div>
+                                            <p className="text-white/50 leading-relaxed text-sm md:text-base max-w-xs font-light">Calculated to precisely align with your goal weight and activity level.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="space-y-5">
+                                    <div className="flex justify-between items-center pb-3 border-b border-white/5">
+                                        <div className="flex items-center gap-3">
+                                            <div className="p-2 bg-blue-500/10 rounded-xl">
+                                                <Dumbbell className="w-5 h-5 text-blue-400" />
+                                            </div>
+                                            <h3 className="text-2xl font-bold text-white/90 tracking-tight">Workout Protocol</h3>
+                                        </div>
+                                        <Button variant="outline" size="sm" onClick={() => setShowWorkoutChart(!showWorkoutChart)} className="border-white/10 h-9 bg-black/40 hover:bg-white/10 text-white/70 hover:text-white rounded-xl backdrop-blur-sm transition-all duration-300">
+                                            {showWorkoutChart ? "View Program" : "View Breakdown"}
+                                        </Button>
+                                    </div>
+                                    <div className="bg-gradient-to-b from-white/[0.04] to-transparent rounded-3xl border border-white/[0.05] overflow-hidden p-3 h-full min-h-[350px]">
+                                        {showWorkoutChart ? (
+                                            <div className="h-[320px] w-full mt-4">
+                                                <ResponsiveContainer width="100%" height="100%">
+                                                    <PieChart>
+                                                        <Pie data={workoutChartData} cx="50%" cy="50%" innerRadius={60} outerRadius={80} paddingAngle={5} dataKey="value">
+                                                            {workoutChartData.map((entry: any, index: number) => (
+                                                                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} stroke="rgba(255,255,255,0.1)" />
+                                                            ))}
+                                                        </Pie>
+                                                        <Tooltip contentStyle={{ backgroundColor: '#030303', borderColor: 'rgba(255,255,255,0.1)', borderRadius: '12px' }} itemStyle={{ color: '#fff' }} />
+                                                        <Legend wrapperStyle={{ paddingTop: '20px' }} />
+                                                    </PieChart>
+                                                </ResponsiveContainer>
+                                            </div>
+                                        ) : (
+                                            <div className="overflow-hidden rounded-2xl border border-white/5 h-full">
+                                                <div className="overflow-x-auto h-full mb-2">
+                                                    <table className="w-full text-left text-sm whitespace-nowrap">
+                                                        <thead className="bg-white/5 text-white/50 text-xs uppercase tracking-wider">
+                                                            <tr>
+                                                                <th className="px-5 py-4 font-semibold">Movement</th>
+                                                                <th className="px-5 py-4 font-semibold">Sets × Reps</th>
+                                                                <th className="px-5 py-4 font-semibold">Focus</th>
+                                                                <th className="px-5 py-4 font-semibold w-10"></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody className="divide-y divide-white/5">
+                                                            {results.workout_plan?.map((workout: any, idx: number) => (
+                                                                <React.Fragment key={idx}>
+                                                                    <tr
+                                                                        onClick={() => setExpandedRow(expandedRow === idx ? null : idx)}
+                                                                        className={`group transition-all cursor-pointer duration-300 ${expandedRow === idx ? 'bg-blue-500/5' : 'hover:bg-white/[0.03]'}`}
+                                                                    >
+                                                                        <td className="px-5 py-4 font-medium text-white/90 group-hover:text-blue-400 transition-colors">
+                                                                            {workout.Exercise || workout.exercise || workout.exercise_name}
+                                                                        </td>
+                                                                        <td className="px-5 py-4 text-white/60 font-mono text-xs">
+                                                                            <span className="text-white/80">{workout.Sets || workout.sets}</span> × <span className="text-white/80">{workout.Reps || workout.reps}</span>
+                                                                        </td>
+                                                                        <td className="px-5 py-4">
+                                                                            <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                                                                                {workout["Target Muscle"] || workout.target_muscle}
+                                                                            </span>
+                                                                        </td>
+                                                                        <td className="px-5 py-4 text-white/30 group-hover:text-blue-400 transition-colors">
+                                                                            {expandedRow === idx ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
+                                                                        </td>
+                                                                    </tr>
+                                                                    {expandedRow === idx && workout.instructions && (
+                                                                        <tr>
+                                                                            <td colSpan={4} className="px-5 py-6 bg-black/60 text-sm text-white/60 border-t border-white/5 animate-in slide-in-from-top-2 fade-in duration-300 border-l-2 border-l-blue-500">
+                                                                                <div className="flex gap-4 items-start max-w-md whitespace-normal">
+                                                                                    <div className="p-2 rounded-full bg-blue-500/10 shrink-0 mt-0.5">
+                                                                                        <Target className="w-4 h-4 text-blue-400" />
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <strong className="block text-white/90 mb-1 font-medium">Execution Form</strong>
+                                                                                        <span className="leading-relaxed">{workout.instructions}</span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    )}
+                                                                </React.Fragment>
+                                                            ))}
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        )}
+                                    </div>
                                 </div>
                             </div>
 
-                            <div className="space-y-4">
-                                <div className="flex justify-between items-center border-b border-white/10 pb-2">
-                                    <h3 className="text-xl font-semibold text-white/90">Workout Routine</h3>
-                                    <Button variant="outline" size="sm" onClick={() => setShowWorkoutChart(!showWorkoutChart)} className="border-white/20 h-8 bg-transparent hover:bg-white/10 text-white hover:text-white">
-                                        {showWorkoutChart ? "View Table" : "View Chart"}
-                                    </Button>
-                                </div>
-                                <div className="bg-black/40 rounded-xl border border-white/5 overflow-hidden p-2">
-                                    {showWorkoutChart ? (
-                                        <div className="h-[280px] w-full mt-2">
+                            {/* Diet Plan Section */}
+                            {results.diet_plan && (
+                                <div className="space-y-5 relative z-10">
+                                    <div className="flex justify-between items-center pb-3 border-b border-white/5">
+                                        <div className="flex items-center gap-3">
+                                            <div className="p-2 bg-emerald-500/10 rounded-xl">
+                                                <Utensils className="w-5 h-5 text-emerald-400" />
+                                            </div>
+                                            <h3 className="text-2xl font-bold text-white/90 tracking-tight">Nutrition Blueprint</h3>
+                                        </div>
+                                        <Button variant="outline" size="sm" onClick={() => setShowDietChart(!showDietChart)} className="border-white/10 h-9 bg-black/40 hover:bg-white/10 text-white/70 hover:text-white rounded-xl backdrop-blur-sm transition-all duration-300">
+                                            {showDietChart ? "View Menu" : "View Macros"}
+                                        </Button>
+                                    </div>
+                                    {showDietChart ? (
+                                        <div className="bg-gradient-to-b from-white/[0.04] to-transparent rounded-3xl p-6 border border-white/[0.05] h-[380px] w-full">
                                             <ResponsiveContainer width="100%" height="100%">
                                                 <PieChart>
-                                                    <Pie data={workoutChartData} cx="50%" cy="50%" innerRadius={60} outerRadius={80} paddingAngle={5} dataKey="value">
-                                                        {workoutChartData.map((entry: any, index: number) => (
+                                                    <Pie data={dietChartData} cx="50%" cy="50%" innerRadius={60} outerRadius={80} paddingAngle={5} dataKey="value" nameKey="name">
+                                                        {dietChartData.map((entry: any, index: number) => (
                                                             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} stroke="rgba(255,255,255,0.1)" />
                                                         ))}
                                                     </Pie>
-                                                    <Tooltip contentStyle={{ backgroundColor: '#030303', borderColor: 'rgba(255,255,255,0.1)', borderRadius: '12px' }} itemStyle={{ color: '#fff' }} />
+                                                    <Tooltip formatter={(value) => `${value} kcal`} contentStyle={{ backgroundColor: '#030303', borderColor: 'rgba(255,255,255,0.1)', borderRadius: '12px' }} itemStyle={{ color: '#fff' }} />
                                                     <Legend wrapperStyle={{ paddingTop: '20px' }} />
                                                 </PieChart>
                                             </ResponsiveContainer>
                                         </div>
                                     ) : (
-                                        <div className="overflow-x-auto">
-                                            <table className="w-full text-left text-sm">
-                                                <thead className="bg-white/5 text-white/70">
-                                                    <tr>
-                                                        <th className="px-4 py-3 font-medium">Exercise</th>
-                                                        <th className="px-4 py-3 font-medium">Sets</th>
-                                                        <th className="px-4 py-3 font-medium">Reps</th>
-                                                        <th className="px-4 py-3 font-medium">Target Muscle</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody className="divide-y divide-white/5">
-                                                    {results.workout_plan?.map((workout: any, idx: number) => (
-                                                        <React.Fragment key={idx}>
-                                                            <tr
-                                                                onClick={() => setExpandedRow(expandedRow === idx ? null : idx)}
-                                                                className="hover:bg-white/[0.04] transition-colors cursor-pointer"
-                                                            >
-                                                                <td className="px-4 py-3 font-medium text-white/90">{workout.Exercise || workout.exercise || workout.exercise_name}</td>
-                                                                <td className="px-4 py-3 text-white/60">{workout.Sets || workout.sets}</td>
-                                                                <td className="px-4 py-3 text-white/60">{workout.Reps || workout.reps}</td>
-                                                                <td className="px-4 py-3 text-emerald-400/80">{workout["Target Muscle"] || workout.target_muscle}</td>
-                                                            </tr>
-                                                            {expandedRow === idx && workout.instructions && (
-                                                                <tr>
-                                                                    <td colSpan={4} className="px-6 py-4 bg-black/40 text-sm text-white/70 border-t border-white/5 animate-in fade-in duration-300">
-                                                                        <strong className="text-white/90">How to perform:</strong> {workout.instructions}
-                                                                    </td>
-                                                                </tr>
-                                                            )}
-                                                        </React.Fragment>
-                                                    ))}
-                                                </tbody>
-                                            </table>
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                                            {results.diet_plan.map((meal: any, idx: number) => (
+                                                <div key={idx} className="group relative bg-[#0a0a0a] rounded-2xl p-6 border border-white/5 hover:border-emerald-500/40 transition-all duration-500 hover:shadow-[0_10px_40px_-10px_rgba(16,185,129,0.2)] hover:-translate-y-1 overflow-hidden">
+                                                    <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/10 rounded-full blur-2xl -mr-10 -mt-10 group-hover:bg-emerald-500/20 transition-colors duration-500" />
+                                                    <div className="relative z-10 flex flex-col h-full">
+                                                        <div className="flex items-center justify-between mb-4">
+                                                            <div className="text-emerald-400 font-bold tracking-wide uppercase text-xs px-3 py-1 bg-emerald-500/10 rounded-full">{meal.meal}</div>
+                                                        </div>
+                                                        <p className="text-white/90 font-medium mb-6 flex-grow leading-snug">{meal.food}</p>
+                                                        <div className="flex items-end justify-between mt-auto">
+                                                            <div className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-white/60">
+                                                                {meal.calories}
+                                                            </div>
+                                                            <div className="text-xs font-medium text-white/40 uppercase tracking-widest pb-1">Kcal</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            ))}
                                         </div>
                                     )}
                                 </div>
+                            )}
+
+                            <div className="pt-12 flex justify-center relative z-10">
+                                <Button
+                                    onClick={() => setResults(null)}
+                                    size="lg"
+                                    className="bg-white/5 hover:bg-white/10 border border-white/10 text-white rounded-xl px-8 h-12 backdrop-blur-md transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:-translate-y-0.5"
+                                >
+                                    <RefreshCcw className="w-4 h-4 mr-3" />
+                                    Recalculate Protocol
+                                </Button>
                             </div>
                         </div>
-
-                        {/* Diet Plan Section */}
-                        {results.diet_plan && (
-                            <div className="mt-8 space-y-4">
-                                <div className="flex justify-between items-center border-b border-white/10 pb-2">
-                                    <h3 className="text-xl font-semibold text-white/90">Recommended Diet Plan</h3>
-                                    <Button variant="outline" size="sm" onClick={() => setShowDietChart(!showDietChart)} className="border-white/20 h-8 bg-transparent hover:bg-white/10 text-white hover:text-white">
-                                        {showDietChart ? "View List" : "View Chart"}
-                                    </Button>
-                                </div>
-                                {showDietChart ? (
-                                    <div className="bg-black/40 rounded-xl p-5 border border-white/5 h-[320px] w-full">
-                                        <ResponsiveContainer width="100%" height="100%">
-                                            <PieChart>
-                                                <Pie data={dietChartData} cx="50%" cy="50%" innerRadius={60} outerRadius={80} paddingAngle={5} dataKey="value" nameKey="name">
-                                                    {dietChartData.map((entry: any, index: number) => (
-                                                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} stroke="rgba(255,255,255,0.1)" />
-                                                    ))}
-                                                </Pie>
-                                                <Tooltip formatter={(value) => `${value} kcal`} contentStyle={{ backgroundColor: '#030303', borderColor: 'rgba(255,255,255,0.1)', borderRadius: '12px' }} itemStyle={{ color: '#fff' }} />
-                                                <Legend wrapperStyle={{ paddingTop: '20px' }} />
-                                            </PieChart>
-                                        </ResponsiveContainer>
-                                    </div>
-                                ) : (
-                                    <div className="grid md:grid-cols-4 gap-4">
-                                        {results.diet_plan.map((meal: any, idx: number) => (
-                                            <div key={idx} className="bg-black/40 rounded-xl p-5 border border-white/5 hover:border-emerald-500/30 transition-colors">
-                                                <div className="text-emerald-400 font-bold mb-2">{meal.meal}</div>
-                                                <p className="text-white/80 text-sm mb-3">{meal.food}</p>
-                                                <div className="text-xs font-medium text-white/40">{meal.calories} kcal</div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                )}
-                            </div>
-                        )}
-
-                        <Button
-                            onClick={() => setResults(null)}
-                            variant="outline"
-                            className="mt-8 border-white/20 hover:bg-white/10 hover:text-white"
-                        >
-                            <RefreshCcw className="w-4 h-4 mr-2" />
-                            Generate New Plan
-                        </Button>
                     </div>
                 )}
 
