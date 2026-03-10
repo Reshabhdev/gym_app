@@ -1,13 +1,14 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import React, { useState } from "react";
 import { MoveRight, RefreshCcw, Activity } from "lucide-react";
 
 export default function FormPage() {
     const [loading, setLoading] = useState(false);
     const [results, setResults] = useState<any>(null);
     const [error, setError] = useState<string | null>(null);
+    const [expandedRow, setExpandedRow] = useState<number | null>(null);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -90,12 +91,24 @@ export default function FormPage() {
                                             </thead>
                                             <tbody className="divide-y divide-white/5">
                                                 {results.workout_plan?.map((workout: any, idx: number) => (
-                                                    <tr key={idx} className="hover:bg-white/[0.02] transition-colors">
-                                                        <td className="px-4 py-3 font-medium text-white/90">{workout.Exercise || workout.exercise}</td>
-                                                        <td className="px-4 py-3 text-white/60">{workout.Sets || workout.sets}</td>
-                                                        <td className="px-4 py-3 text-white/60">{workout.Reps || workout.reps}</td>
-                                                        <td className="px-4 py-3 text-emerald-400/80">{workout["Target Muscle"] || workout.target_muscle}</td>
-                                                    </tr>
+                                                    <React.Fragment key={idx}>
+                                                        <tr
+                                                            onClick={() => setExpandedRow(expandedRow === idx ? null : idx)}
+                                                            className="hover:bg-white/[0.04] transition-colors cursor-pointer"
+                                                        >
+                                                            <td className="px-4 py-3 font-medium text-white/90">{workout.Exercise || workout.exercise || workout.exercise_name}</td>
+                                                            <td className="px-4 py-3 text-white/60">{workout.Sets || workout.sets}</td>
+                                                            <td className="px-4 py-3 text-white/60">{workout.Reps || workout.reps}</td>
+                                                            <td className="px-4 py-3 text-emerald-400/80">{workout["Target Muscle"] || workout.target_muscle}</td>
+                                                        </tr>
+                                                        {expandedRow === idx && workout.instructions && (
+                                                            <tr>
+                                                                <td colSpan={4} className="px-6 py-4 bg-black/40 text-sm text-white/70 border-t border-white/5 animate-in fade-in duration-300">
+                                                                    <strong className="text-white/90">How to perform:</strong> {workout.instructions}
+                                                                </td>
+                                                            </tr>
+                                                        )}
+                                                    </React.Fragment>
                                                 ))}
                                             </tbody>
                                         </table>
@@ -103,6 +116,22 @@ export default function FormPage() {
                                 </div>
                             </div>
                         </div>
+
+                        {/* Diet Plan Section */}
+                        {results.diet_plan && (
+                            <div className="mt-8 space-y-4">
+                                <h3 className="text-xl font-semibold text-white/90 border-b border-white/10 pb-2">Recommended Diet Plan</h3>
+                                <div className="grid md:grid-cols-4 gap-4">
+                                    {results.diet_plan.map((meal: any, idx: number) => (
+                                        <div key={idx} className="bg-black/40 rounded-xl p-5 border border-white/5 hover:border-emerald-500/30 transition-colors">
+                                            <div className="text-emerald-400 font-bold mb-2">{meal.meal}</div>
+                                            <p className="text-white/80 text-sm mb-3">{meal.food}</p>
+                                            <div className="text-xs font-medium text-white/40">{meal.calories} kcal</div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
 
                         <Button
                             onClick={() => setResults(null)}

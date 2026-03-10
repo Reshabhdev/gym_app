@@ -2,6 +2,7 @@ from fastapi import APIRouter, HTTPException
 from app.schemas.user import UserInput, AppResponse
 from app.core.calculator import calculate_tdee, get_target_calories
 from app.services.inference import generate_workout_plan
+from app.services.diet import generate_diet_plan
 from sqlalchemy.ext.asyncio import AsyncSession
 from fastapi import Depends
 from app.db.database import get_db
@@ -32,7 +33,14 @@ async def get_fitness_recommendation(
             goal=user.goal
         )
         
-        # 3. Log request to PostgreSQL before returning
+        # 3. Generate the personalized diet plan
+        diet_plan = generate_diet_plan(
+            diet_preference=user.diet_preference,
+            goal=user.goal,
+            target_calories=target_cals
+        )
+        
+        # 4. Log request to PostgreSQL before returning
         db_request = WorkoutRequest(
             age=user.age,
             gender=user.gender,
@@ -47,10 +55,11 @@ async def get_fitness_recommendation(
         db.add(db_request)
         await db.commit()
         
-        # 4. Return the compiled response
+        # 5. Return the compiled response
         return AppResponse(
             target_calories=target_cals,
-            workout_plan=workout_plan
+            workout_plan=workout_plan,
+            diet_plan=diet_plan
         )
         
     except Exception as e:

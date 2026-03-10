@@ -4,25 +4,29 @@
             "exercise_name": "Hands-Elevated Push-Up",
             "sets": 3,
             "reps": "12-15",
-            "target_muscle": "Chest"
+            "target_muscle": "Chest",
+            "instructions": "Place hands on an elevated surface like a bench or step. Keep your body in a straight line. Lower your chest to the edge and push back up."
         },
         {
             "exercise_name": "Alien Squat",
             "sets": 3,
             "reps": "12-15",
-            "target_muscle": "Quadriceps"
+            "target_muscle": "Quadriceps",
+            "instructions": "Stand with feet wide apart. Squat down deeply until your thighs are parallel to the floor, mimicking an 'alien' landing stance. Stand back up."
         },
         {
             "exercise_name": "Pull-Up",
             "sets": 3,
             "reps": "12-15",
-            "target_muscle": "Lats"
+            "target_muscle": "Lats",
+            "instructions": "Grasp high suspension handles. Pull body up until neck reaches height of hands. Lower body until arms and shoulders are fully extended. Repeat."
         },
         {
             "exercise_name": "Gorilla Chin/Crunch",
             "sets": 3,
             "reps": "12-15",
-            "target_muscle": "Abdominals"
+            "target_muscle": "Abdominals",
+            "instructions": "Hang from a pull-up bar. Pull yourself up while simultaneously bringing your knees to your chest. Lower down with control."
         }
     ],
     "home_build": [
@@ -30,25 +34,29 @@
             "exercise_name": "Pushups",
             "sets": 4,
             "reps": "8-10",
-            "target_muscle": "Chest"
+            "target_muscle": "Chest",
+            "instructions": "Start in a high plank position. Lower your body until your chest nearly touches the floor. Push yourself back up to the starting position."
         },
         {
             "exercise_name": "Jumping Rope",
             "sets": 4,
             "reps": "8-10",
-            "target_muscle": "Quadriceps"
+            "target_muscle": "Quadriceps",
+            "instructions": "Hold a jump rope with handles in both hands. Swing the rope over your head and jump over it as it passes your feet. Keep a steady rhythm."
         },
         {
             "exercise_name": "Pullups",
             "sets": 4,
             "reps": "8-10",
-            "target_muscle": "Lats"
+            "target_muscle": "Lats",
+            "instructions": "Grasp a pull-up bar with an overhand grip. Hang freely, then pull yourself up until your chin clears the bar. Lower back down with control."
         },
         {
             "exercise_name": "Elbow Plank",
             "sets": 4,
             "reps": "8-10",
-            "target_muscle": "Abdominals"
+            "target_muscle": "Abdominals",
+            "instructions": "Rest on your forearms and toes, keeping your body in a straight line from head to heels. Engage your core and hold the position."
         }
     ],
     "gym_lose": [
@@ -56,25 +64,29 @@
             "exercise_name": "Leverage Incline Chest Press",
             "sets": 3,
             "reps": "12-15",
-            "target_muscle": "Chest"
+            "target_muscle": "Chest",
+            "instructions": "Sit at the leverage incline press machine. Adjust the seat so the handles align with your mid-chest. Press the handles outward until arms are fully extended, then lower them back."
         },
         {
             "exercise_name": "Narrow Stance Hack Squats",
             "sets": 3,
             "reps": "12-15",
-            "target_muscle": "Quadriceps"
+            "target_muscle": "Quadriceps",
+            "instructions": "Place shoulders under the pads of the hack squat machine. Stand with your feet close together on the platform. Lower yourself until thighs are parallel, then push back up."
         },
         {
             "exercise_name": "Machine Seated Row",
             "sets": 3,
             "reps": "12-15",
-            "target_muscle": "Lats"
+            "target_muscle": "Lats",
+            "instructions": "Sit at the machine row station. Grasp the handles, keep your chest against the pad, and pull the handles toward you by squeezing your shoulder blades together. Release slowly."
         },
         {
             "exercise_name": "Bench Barbell Roll-Out",
             "sets": 3,
             "reps": "12-15",
-            "target_muscle": "Abdominals"
+            "target_muscle": "Abdominals",
+            "instructions": "Kneel holding a barbell with round plates on the floor in front of you. Roll the barbell forward as far as you can while keeping your core tight, then roll it back to the starting knees position."
         }
     ],
     "gym_build": [
@@ -82,25 +94,29 @@
             "exercise_name": "Butterfly",
             "sets": 4,
             "reps": "8-10",
-            "target_muscle": "Chest"
+            "target_muscle": "Chest",
+            "instructions": "Sit on the pec deck machine. Place your forearms on the pads and push them together in front of your chest, squeezing the pectoral muscles. Open arms back with control."
         },
         {
             "exercise_name": "Single-Leg Press",
             "sets": 4,
             "reps": "8-10",
-            "target_muscle": "Quadriceps"
+            "target_muscle": "Quadriceps",
+            "instructions": "Sit in the leg press machine. Place one foot flat on the sled. Lower the weight until your knee forms a 90-degree angle, then press it back up to full extension. Repeat per leg."
         },
         {
             "exercise_name": "Reverse-Grip Lat Pull-Down",
             "sets": 4,
             "reps": "8-10",
-            "target_muscle": "Lats"
+            "target_muscle": "Lats",
+            "instructions": "Grasp the lat pulldown bar with an underhand grip, shoulder-width apart. Pull the bar down to your upper chest, squeezing your lats. Slowly release it back up."
         },
         {
             "exercise_name": "Ab Crunch Machine",
             "sets": 4,
             "reps": "8-10",
-            "target_muscle": "Abdominals"
+            "target_muscle": "Abdominals",
+            "instructions": "Sit in the ab crunch machine. Hook your feet under the pads and grab the handles. Crunch forward by contracting your abs, then slowly return to the top."
         }
     ]
 }
