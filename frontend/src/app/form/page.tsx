@@ -113,158 +113,157 @@ export default function FormPage() {
                                 </p>
                             </div>
 
-                            <div className="grid md:grid-cols-2 gap-8 mb-12">
-                                <div className="space-y-5">
-                                    <div className="flex items-center gap-3 pb-3 border-b border-white/5">
-                                        <div className="p-2 bg-orange-500/10 rounded-xl">
-                                            <Flame className="w-5 h-5 text-orange-400" />
-                                        </div>
-                                        <h3 className="text-2xl font-bold text-white/90 tracking-tight">Daily Target</h3>
-                                    </div>
-                                    <div className="group relative bg-gradient-to-b from-white/[0.08] to-transparent rounded-3xl p-8 border border-white/[0.05] overflow-hidden transition-all duration-500 hover:border-orange-500/30 hover:bg-white/[0.1] hover:shadow-[0_0_40px_-15px_rgba(249,115,22,0.2)]">
-                                        <div className="absolute top-0 right-0 p-6 opacity-[0.03] transition-transform duration-700 group-hover:scale-125 group-hover:-rotate-12 group-hover:opacity-10 translate-x-8 -translate-y-8">
-                                            <Flame className="w-48 h-48 text-orange-500" />
-                                        </div>
-                                        <div className="relative z-10 flex flex-col h-full justify-center">
-                                            <div className="text-7xl font-black text-transparent bg-clip-text bg-gradient-to-br from-white to-white/50 mb-4 tracking-tighter">
-                                                {results.target_calories}
+                            <div className={`grid gap-8 mb-12 ${showWorkoutChart || showDietChart ? 'md:grid-cols-1' : 'md:grid-cols-2'}`}>
+                                {(!showWorkoutChart && !showDietChart) && (
+                                    <div className="space-y-5">
+                                        <div className="flex items-center gap-3 pb-3 border-b border-white/5">
+                                            <div className="p-2 bg-orange-500/10 rounded-xl">
+                                                <Flame className="w-5 h-5 text-orange-400" />
                                             </div>
-                                            <div className="text-2xl font-medium tracking-wide text-orange-400 mb-6 flex items-center gap-2">
-                                                KCAL <span className="w-1.5 h-1.5 rounded-full bg-orange-500/50" /> DAY
-                                            </div>
-                                            <p className="text-white/50 leading-relaxed text-sm md:text-base max-w-xs font-light">Calculated to precisely align with your goal weight and activity level.</p>
+                                            <h3 className="text-2xl font-bold text-white/90 tracking-tight">Daily Target</h3>
                                         </div>
-                                    </div>
-                                </div>
-
-                                <div className="space-y-5">
-                                    <div className="flex justify-between items-center pb-3 border-b border-white/5">
-                                        <div className="flex items-center gap-3">
-                                            <div className="p-2 bg-blue-500/10 rounded-xl">
-                                                <Dumbbell className="w-5 h-5 text-blue-400" />
+                                        <div className="group relative bg-gradient-to-b from-white/[0.08] to-transparent rounded-3xl p-8 border border-white/[0.05] overflow-hidden transition-all duration-500 hover:border-orange-500/30 hover:bg-white/[0.1] hover:shadow-[0_0_40px_-15px_rgba(249,115,22,0.2)]">
+                                            <div className="absolute top-0 right-0 p-6 opacity-[0.03] transition-transform duration-700 group-hover:scale-125 group-hover:-rotate-12 group-hover:opacity-10 translate-x-8 -translate-y-8">
+                                                <Flame className="w-48 h-48 text-orange-500" />
                                             </div>
-                                            <h3 className="text-2xl font-bold text-white/90 tracking-tight">Workout Protocol</h3>
-                                        </div>
-                                        <Button variant="outline" size="sm" onClick={() => setShowWorkoutChart(!showWorkoutChart)} className="border-white/10 h-9 bg-black/40 hover:bg-white/10 text-white/70 hover:text-white rounded-xl backdrop-blur-sm transition-all duration-300">
-                                            {showWorkoutChart ? "View Program" : "View Breakdown"}
-                                        </Button>
-                                    </div>
-                                    <div className="bg-gradient-to-b from-white/[0.04] to-transparent rounded-3xl border border-white/[0.05] overflow-hidden p-3 min-h-[350px]">
-                                        {showWorkoutChart ? (
-                                            <div className="flex flex-col md:flex-row h-auto min-h-[320px] w-full mt-4 gap-4">
-                                                <div className="flex-1 min-h-[300px]">
-                                                    <ResponsiveContainer width="100%" height="100%">
-                                                        <PieChart>
-                                                            <Pie
-                                                                data={workoutChartData}
-                                                                cx="50%" cy="50%"
-                                                                innerRadius={60} outerRadius={80}
-                                                                paddingAngle={5} dataKey="value"
-                                                                onMouseEnter={(_, index) => setActiveWorkoutIdx(index)}
-                                                                onClick={(_, index) => setActiveWorkoutIdx(activeWorkoutIdx === index ? null : index)}
-                                                            >
-                                                                {workoutChartData.map((entry: any, index: number) => (
-                                                                    <Cell
-                                                                        key={`cell-${index}`}
-                                                                        fill={COLORS[index % COLORS.length]}
-                                                                        stroke="rgba(255,255,255,0.1)"
-                                                                        className="transition-all duration-300 cursor-pointer hover:opacity-80"
-                                                                        style={{ filter: activeWorkoutIdx === index ? `drop-shadow(0 0 8px ${COLORS[index % COLORS.length]})` : 'none' }}
-                                                                    />
-                                                                ))}
-                                                            </Pie>
-                                                            <Tooltip contentStyle={{ backgroundColor: '#030303', borderColor: 'rgba(255,255,255,0.1)', borderRadius: '12px' }} itemStyle={{ color: '#fff' }} />
-                                                        </PieChart>
-                                                    </ResponsiveContainer>
+                                            <div className="relative z-10 flex flex-col h-full justify-center">
+                                                <div className="text-7xl font-black text-transparent bg-clip-text bg-gradient-to-br from-white to-white/50 mb-4 tracking-tighter">
+                                                    {results.target_calories}
                                                 </div>
+                                                <div className="text-2xl font-medium tracking-wide text-orange-400 mb-6 flex items-center gap-2">
+                                                    KCAL <span className="w-1.5 h-1.5 rounded-full bg-orange-500/50" /> DAY
+                                                </div>
+                                                <p className="text-white/50 leading-relaxed text-sm md:text-base max-w-xs font-light">Calculated to precisely align with your goal weight and activity level.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
 
-                                                {/* Details Panel for Workout Chart */}
-                                                <div className="w-full md:w-64 bg-black/40 rounded-2xl p-5 border border-white/5 flex flex-col transition-all duration-300">
-                                                    {activeWorkoutDetails ? (
-                                                        <div className="animate-in fade-in zoom-in-95 duration-200">
-                                                            <div className="text-xs uppercase tracking-wider text-white/40 mb-1">Target Muscle</div>
-                                                            <div className="text-xl font-bold text-white/90 mb-4 pb-2 border-b border-white/10" style={{ color: COLORS[activeWorkoutIdx! % COLORS.length] }}>
-                                                                {activeWorkoutDetails.target}
+                                {(!showDietChart) && (
+                                    <div className="space-y-5">
+                                        <div className="flex justify-between items-center pb-3 border-b border-white/5">
+                                            <div className="flex items-center gap-3">
+                                                <div className="p-2 bg-blue-500/10 rounded-xl">
+                                                    <Dumbbell className="w-5 h-5 text-blue-400" />
+                                                </div>
+                                                <h3 className="text-2xl font-bold text-white/90 tracking-tight">Workout Protocol</h3>
+                                            </div>
+                                            <Button variant="outline" size="sm" onClick={() => setShowWorkoutChart(!showWorkoutChart)} className="border-white/10 h-9 bg-black/40 hover:bg-white/10 text-white/70 hover:text-white rounded-xl backdrop-blur-sm transition-all duration-300">
+                                                {showWorkoutChart ? "View Program" : "View Breakdown"}
+                                            </Button>
+                                        </div>
+                                        <div className="bg-gradient-to-b from-white/[0.04] to-transparent rounded-3xl border border-white/[0.05] overflow-hidden p-3 min-h-[350px]">
+                                            {showWorkoutChart ? (
+                                                <div className="flex flex-col md:flex-row h-auto min-h-[320px] w-full mt-4 gap-4">
+                                                    <div className="flex-1 min-h-[300px]">
+                                                        <ResponsiveContainer width="100%" height="100%">
+                                                            <PieChart>
+                                                                <Pie
+                                                                    data={workoutChartData}
+                                                                    cx="50%" cy="50%"
+                                                                    innerRadius={60} outerRadius={80}
+                                                                    paddingAngle={5} dataKey="value"
+                                                                    onMouseEnter={(_, index) => setActiveWorkoutIdx(index)}
+                                                                    onClick={(_, index) => setActiveWorkoutIdx(activeWorkoutIdx === index ? null : index)}
+                                                                >
+                                                                    {workoutChartData.map((entry: any, index: number) => (
+                                                                        <Cell
+                                                                            key={`cell-${index}`}
+                                                                            fill={COLORS[index % COLORS.length]}
+                                                                            stroke="rgba(255,255,255,0.1)"
+                                                                            className="transition-all duration-300 cursor-pointer hover:opacity-80"
+                                                                            style={{ filter: activeWorkoutIdx === index ? `drop-shadow(0 0 8px ${COLORS[index % COLORS.length]})` : 'none' }}
+                                                                        />
+                                                                    ))}
+                                                                </Pie>
+                                                                <Tooltip contentStyle={{ backgroundColor: '#030303', borderColor: 'rgba(255,255,255,0.1)', borderRadius: '12px' }} itemStyle={{ color: '#fff' }} />
+                                                            </PieChart>
+                                                        </ResponsiveContainer>
+                                                    </div>
+
+                                                    {/* Details Panel for Workout Chart */}
+                                                    {activeWorkoutIdx !== null && activeWorkoutDetails && (
+                                                        <div className="w-full md:w-64 bg-black/40 rounded-2xl p-5 border border-white/5 flex flex-col transition-all duration-300">
+                                                            <div className="animate-in fade-in zoom-in-95 duration-200">
+                                                                <div className="text-xs uppercase tracking-wider text-white/40 mb-1">Target Muscle</div>
+                                                                <div className="text-xl font-bold text-white/90 mb-4 pb-2 border-b border-white/10" style={{ color: COLORS[activeWorkoutIdx % COLORS.length] }}>
+                                                                    {activeWorkoutDetails.target}
+                                                                </div>
+                                                                <div className="space-y-3 overflow-y-auto max-h-[200px] pr-2 custom-scrollbar">
+                                                                    {activeWorkoutDetails.workouts.map((w: any, i: number) => (
+                                                                        <div key={i} className="text-sm">
+                                                                            <div className="font-medium text-white/80">{w.Exercise || w.exercise || w.exercise_name}</div>
+                                                                            <div className="text-white/40text-xs font-mono mt-0.5">{w.Sets || w.sets} × {w.Reps || w.reps}</div>
+                                                                        </div>
+                                                                    ))}
+                                                                </div>
                                                             </div>
-                                                            <div className="space-y-3 overflow-y-auto max-h-[200px] pr-2 custom-scrollbar">
-                                                                {activeWorkoutDetails.workouts.map((w: any, i: number) => (
-                                                                    <div key={i} className="text-sm">
-                                                                        <div className="font-medium text-white/80">{w.Exercise || w.exercise || w.exercise_name}</div>
-                                                                        <div className="text-white/40text-xs font-mono mt-0.5">{w.Sets || w.sets} × {w.Reps || w.reps}</div>
-                                                                    </div>
-                                                                ))}
-                                                            </div>
-                                                        </div>
-                                                    ) : (
-                                                        <div className="flex-1 flex flex-col items-center justify-center text-center text-white/30 h-full min-h-[200px]">
-                                                            <Target className="w-8 h-8 mb-3 opacity-50" />
-                                                            <p className="text-sm">Select a muscle group to view prescribed movements.</p>
                                                         </div>
                                                     )}
                                                 </div>
-                                            </div>
-                                        ) : (
-                                            <div className="overflow-hidden rounded-2xl border border-white/5 h-full">
-                                                <div className="overflow-x-auto h-full mb-2">
-                                                    <table className="w-full text-left text-sm whitespace-nowrap">
-                                                        <thead className="bg-white/5 text-white/50 text-xs uppercase tracking-wider">
-                                                            <tr>
-                                                                <th className="px-5 py-4 font-semibold">Movement</th>
-                                                                <th className="px-5 py-4 font-semibold">Sets × Reps</th>
-                                                                <th className="px-5 py-4 font-semibold">Focus</th>
-                                                                <th className="px-5 py-4 font-semibold w-10"></th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody className="divide-y divide-white/5">
-                                                            {results.workout_plan?.map((workout: any, idx: number) => (
-                                                                <React.Fragment key={idx}>
-                                                                    <tr
-                                                                        onClick={() => setExpandedRow(expandedRow === idx ? null : idx)}
-                                                                        className={`group transition-all cursor-pointer duration-300 ${expandedRow === idx ? 'bg-blue-500/5' : 'hover:bg-white/[0.03]'}`}
-                                                                    >
-                                                                        <td className="px-5 py-4 font-medium text-white/90 group-hover:text-blue-400 transition-colors">
-                                                                            {workout.Exercise || workout.exercise || workout.exercise_name}
-                                                                        </td>
-                                                                        <td className="px-5 py-4 text-white/60 font-mono text-xs">
-                                                                            <span className="text-white/80">{workout.Sets || workout.sets}</span> × <span className="text-white/80">{workout.Reps || workout.reps}</span>
-                                                                        </td>
-                                                                        <td className="px-5 py-4">
-                                                                            <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20">
-                                                                                {workout["Target Muscle"] || workout.target_muscle}
-                                                                            </span>
-                                                                        </td>
-                                                                        <td className="px-5 py-4 text-white/30 group-hover:text-blue-400 transition-colors">
-                                                                            {expandedRow === idx ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
-                                                                        </td>
-                                                                    </tr>
-                                                                    {expandedRow === idx && workout.instructions && (
-                                                                        <tr>
-                                                                            <td colSpan={4} className="px-5 py-6 bg-black/60 text-sm text-white/60 border-t border-white/5 animate-in slide-in-from-top-2 fade-in duration-300 border-l-2 border-l-blue-500">
-                                                                                <div className="flex gap-4 items-start max-w-md whitespace-normal">
-                                                                                    <div className="p-2 rounded-full bg-blue-500/10 shrink-0 mt-0.5">
-                                                                                        <Target className="w-4 h-4 text-blue-400" />
-                                                                                    </div>
-                                                                                    <div>
-                                                                                        <strong className="block text-white/90 mb-1 font-medium">Execution Form</strong>
-                                                                                        <span className="leading-relaxed">{workout.instructions}</span>
-                                                                                    </div>
-                                                                                </div>
+                                            ) : (
+                                                <div className="overflow-hidden rounded-2xl border border-white/5 h-full">
+                                                    <div className="overflow-x-auto h-full mb-2">
+                                                        <table className="w-full text-left text-sm whitespace-nowrap">
+                                                            <thead className="bg-white/5 text-white/50 text-xs uppercase tracking-wider">
+                                                                <tr>
+                                                                    <th className="px-5 py-4 font-semibold">Movement</th>
+                                                                    <th className="px-5 py-4 font-semibold">Sets × Reps</th>
+                                                                    <th className="px-5 py-4 font-semibold">Focus</th>
+                                                                    <th className="px-5 py-4 font-semibold w-10"></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody className="divide-y divide-white/5">
+                                                                {results.workout_plan?.map((workout: any, idx: number) => (
+                                                                    <React.Fragment key={idx}>
+                                                                        <tr
+                                                                            onClick={() => setExpandedRow(expandedRow === idx ? null : idx)}
+                                                                            className={`group transition-all cursor-pointer duration-300 ${expandedRow === idx ? 'bg-blue-500/5' : 'hover:bg-white/[0.03]'}`}
+                                                                        >
+                                                                            <td className="px-5 py-4 font-medium text-white/90 group-hover:text-blue-400 transition-colors">
+                                                                                {workout.Exercise || workout.exercise || workout.exercise_name}
+                                                                            </td>
+                                                                            <td className="px-5 py-4 text-white/60 font-mono text-xs">
+                                                                                <span className="text-white/80">{workout.Sets || workout.sets}</span> × <span className="text-white/80">{workout.Reps || workout.reps}</span>
+                                                                            </td>
+                                                                            <td className="px-5 py-4">
+                                                                                <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                                                                                    {workout["Target Muscle"] || workout.target_muscle}
+                                                                                </span>
+                                                                            </td>
+                                                                            <td className="px-5 py-4 text-white/30 group-hover:text-blue-400 transition-colors">
+                                                                                {expandedRow === idx ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
                                                                             </td>
                                                                         </tr>
-                                                                    )}
-                                                                </React.Fragment>
-                                                            ))}
-                                                        </tbody>
-                                                    </table>
+                                                                        {expandedRow === idx && workout.instructions && (
+                                                                            <tr>
+                                                                                <td colSpan={4} className="px-5 py-6 bg-black/60 text-sm text-white/60 border-t border-white/5 animate-in slide-in-from-top-2 fade-in duration-300 border-l-2 border-l-blue-500">
+                                                                                    <div className="flex gap-4 items-start max-w-md whitespace-normal">
+                                                                                        <div className="p-2 rounded-full bg-blue-500/10 shrink-0 mt-0.5">
+                                                                                            <Target className="w-4 h-4 text-blue-400" />
+                                                                                        </div>
+                                                                                        <div>
+                                                                                            <strong className="block text-white/90 mb-1 font-medium">Execution Form</strong>
+                                                                                            <span className="leading-relaxed">{workout.instructions}</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                        )}
+                                                                    </React.Fragment>
+                                                                ))}
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        )}
+                                            )}
+                                        </div>
                                     </div>
-                                </div>
+                                )}
                             </div>
 
                             {/* Diet Plan Section */}
-                            {results.diet_plan && (
+                            {results.diet_plan && (!showWorkoutChart) && (
                                 <div className="space-y-5 relative z-10">
                                     <div className="flex justify-between items-center pb-3 border-b border-white/5">
                                         <div className="flex items-center gap-3">
@@ -306,8 +305,8 @@ export default function FormPage() {
                                             </div>
 
                                             {/* Details Panel for Diet Chart */}
-                                            <div className="w-full md:w-64 bg-black/40 rounded-2xl p-6 border border-white/5 flex flex-col transition-all duration-300">
-                                                {activeDietIdx !== null && dietChartData[activeDietIdx] ? (
+                                            {activeDietIdx !== null && dietChartData[activeDietIdx] && (
+                                                <div className="w-full md:w-64 bg-black/40 rounded-2xl p-6 border border-white/5 flex flex-col transition-all duration-300">
                                                     <div className="animate-in fade-in zoom-in-95 duration-200">
                                                         <div className="text-xs uppercase tracking-wider text-white/40 mb-1">Meal Content</div>
                                                         <div className="text-xl font-bold text-white/90 mb-2" style={{ color: COLORS[activeDietIdx % COLORS.length] }}>
@@ -323,13 +322,8 @@ export default function FormPage() {
                                                             <div className="text-xs font-medium text-white/40 uppercase mb-1">Kcal</div>
                                                         </div>
                                                     </div>
-                                                ) : (
-                                                    <div className="flex-1 flex flex-col items-center justify-center text-center text-white/30 h-full min-h-[200px]">
-                                                        <Utensils className="w-8 h-8 mb-3 opacity-50" />
-                                                        <p className="text-sm">Select a meal block to view full nutrition details.</p>
-                                                    </div>
-                                                )}
-                                            </div>
+                                                </div>
+                                            )}
                                         </div>
                                     ) : (
                                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
