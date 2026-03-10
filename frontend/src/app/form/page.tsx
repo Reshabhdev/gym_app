@@ -89,12 +89,12 @@ export default function FormPage() {
     };
 
     return (
-        <main className="min-h-[100dvh] bg-[#030303] text-white py-20 px-4 md:px-8">
+        <main className="min-h-[100dvh] bg-[#030303] text-white py-12 px-4 md:px-8">
             <div className="max-w-4xl mx-auto space-y-8">
 
                 {/* Results Section */}
                 {results && (
-                    <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-black/60 p-8 md:p-12 backdrop-blur-2xl shadow-[0_0_80px_-20px_rgba(16,185,129,0.3)] animate-in zoom-in-95 fade-in duration-700">
+                    <div className="relative overflow-hidden rounded-3xl md:rounded-[2.5rem] border border-white/10 bg-black/60 p-5 md:p-12 backdrop-blur-2xl shadow-[0_0_80px_-20px_rgba(16,185,129,0.3)] animate-in zoom-in-95 fade-in duration-700">
                         {/* Decorative dynamic glows */}
                         <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-emerald-500/70 to-transparent" />
                         <div className="absolute -top-32 -right-32 w-96 h-96 bg-emerald-500/10 rounded-full blur-[100px] pointer-events-none" />
@@ -115,7 +115,7 @@ export default function FormPage() {
 
                             <div className={`grid gap-8 mb-12 ${showWorkoutChart || showDietChart ? 'md:grid-cols-1' : 'md:grid-cols-2'}`}>
                                 {(!showWorkoutChart && !showDietChart) && (
-                                    <div className="space-y-5">
+                                    <div className="space-y-5 min-w-0">
                                         <div className="flex items-center gap-3 pb-3 border-b border-white/5">
                                             <div className="p-2 bg-orange-500/10 rounded-xl">
                                                 <Flame className="w-5 h-5 text-orange-400" />
@@ -140,22 +140,22 @@ export default function FormPage() {
                                 )}
 
                                 {(!showDietChart) && (
-                                    <div className="space-y-5">
-                                        <div className="flex justify-between items-center pb-3 border-b border-white/5">
+                                    <div className="space-y-5 min-w-0">
+                                        <div className="flex flex-wrap gap-4 justify-between items-center pb-3 border-b border-white/5">
                                             <div className="flex items-center gap-3">
-                                                <div className="p-2 bg-blue-500/10 rounded-xl">
+                                                <div className="p-2 bg-blue-500/10 rounded-xl flex-shrink-0">
                                                     <Dumbbell className="w-5 h-5 text-blue-400" />
                                                 </div>
-                                                <h3 className="text-2xl font-bold text-white/90 tracking-tight">Workout Protocol</h3>
+                                                <h3 className="text-xl md:text-2xl font-bold text-white/90 tracking-tight">Workout Protocol</h3>
                                             </div>
-                                            <Button variant="outline" size="sm" onClick={() => setShowWorkoutChart(!showWorkoutChart)} className="border-white/10 h-9 bg-black/40 hover:bg-white/10 text-white/70 hover:text-white rounded-xl backdrop-blur-sm transition-all duration-300">
+                                            <Button variant="outline" size="sm" onClick={() => setShowWorkoutChart(!showWorkoutChart)} className="border-white/10 h-9 bg-black/40 hover:bg-white/10 text-white/70 hover:text-white rounded-xl backdrop-blur-sm transition-all duration-300 whitespace-nowrap">
                                                 {showWorkoutChart ? "View Program" : "View Breakdown"}
                                             </Button>
                                         </div>
                                         <div className="bg-gradient-to-b from-white/[0.04] to-transparent rounded-3xl border border-white/[0.05] overflow-hidden p-3 min-h-[350px]">
                                             {showWorkoutChart ? (
                                                 <div className="flex flex-col md:flex-row h-auto min-h-[320px] w-full mt-4 gap-4">
-                                                    <div className="flex-1 min-h-[300px]">
+                                                    <div className="w-full h-[300px] md:flex-1 md:h-auto md:min-h-[300px]">
                                                         <ResponsiveContainer width="100%" height="100%">
                                                             <PieChart>
                                                                 <Pie
@@ -264,21 +264,21 @@ export default function FormPage() {
 
                             {/* Diet Plan Section */}
                             {results.diet_plan && (!showWorkoutChart) && (
-                                <div className="space-y-5 relative z-10">
-                                    <div className="flex justify-between items-center pb-3 border-b border-white/5">
+                                <div className="space-y-5 relative z-10 min-w-0">
+                                    <div className="flex flex-wrap gap-4 justify-between items-center pb-3 border-b border-white/5">
                                         <div className="flex items-center gap-3">
-                                            <div className="p-2 bg-emerald-500/10 rounded-xl">
+                                            <div className="p-2 bg-emerald-500/10 rounded-xl flex-shrink-0">
                                                 <Utensils className="w-5 h-5 text-emerald-400" />
                                             </div>
-                                            <h3 className="text-2xl font-bold text-white/90 tracking-tight">Nutrition Blueprint</h3>
+                                            <h3 className="text-xl md:text-2xl font-bold text-white/90 tracking-tight">Nutrition Blueprint</h3>
                                         </div>
-                                        <Button variant="outline" size="sm" onClick={() => setShowDietChart(!showDietChart)} className="border-white/10 h-9 bg-black/40 hover:bg-white/10 text-white/70 hover:text-white rounded-xl backdrop-blur-sm transition-all duration-300">
+                                        <Button variant="outline" size="sm" onClick={() => setShowDietChart(!showDietChart)} className="border-white/10 h-9 bg-black/40 hover:bg-white/10 text-white/70 hover:text-white rounded-xl backdrop-blur-sm transition-all duration-300 whitespace-nowrap">
                                             {showDietChart ? "View Menu" : "View Macros"}
                                         </Button>
                                     </div>
                                     {showDietChart ? (
                                         <div className="bg-gradient-to-b from-white/[0.04] to-transparent rounded-3xl p-6 border border-white/[0.05] min-h-[380px] w-full flex flex-col md:flex-row gap-6">
-                                            <div className="flex-1 min-h-[300px]">
+                                            <div className="w-full h-[300px] md:flex-1 md:h-auto md:min-h-[300px]">
                                                 <ResponsiveContainer width="100%" height="100%">
                                                     <PieChart>
                                                         <Pie
