@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen">
+    <main className="relative min-h-[100dvh]">
       <HeroGeometric
         title1="Welcome to"
         title2="Gym AI App"

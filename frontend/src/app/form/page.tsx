@@ -14,6 +14,8 @@ export default function FormPage() {
     const [expandedRow, setExpandedRow] = useState<number | null>(null);
     const [showWorkoutChart, setShowWorkoutChart] = useState(false);
     const [showDietChart, setShowDietChart] = useState(false);
+    const [activeWorkoutIdx, setActiveWorkoutIdx] = useState<number | null>(null);
+    const [activeDietIdx, setActiveDietIdx] = useState<number | null>(null);
 
     const workoutChartData = React.useMemo(() => {
         if (!results?.workout_plan) return [];
@@ -32,9 +34,18 @@ export default function FormPage() {
         if (!results?.diet_plan) return [];
         return results.diet_plan.map((m: any) => ({
             name: m.meal,
-            value: m.calories
+            value: m.calories,
+            food: m.food
         }));
     }, [results?.diet_plan]);
+
+    const activeWorkoutDetails = React.useMemo(() => {
+        if (activeWorkoutIdx === null || !workoutChartData[activeWorkoutIdx]) return null;
+        const target = workoutChartData[activeWorkoutIdx].name;
+        // Find all workouts for this muscle
+        const workouts = results.workout_plan.filter((w: any) => (w["Target Muscle"] || w.target_muscle || "Other") === target);
+        return { target, workouts };
+    }, [activeWorkoutIdx, workoutChartData, results?.workout_plan]);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -78,7 +89,7 @@ export default function FormPage() {
     };
 
     return (
-        <main className="min-h-screen bg-[#030303] text-white py-20 px-4 md:px-8">
+        <main className="min-h-[100dvh] bg-[#030303] text-white py-20 px-4 md:px-8">
             <div className="max-w-4xl mx-auto space-y-8">
 
                 {/* Results Section */}
@@ -138,20 +149,59 @@ export default function FormPage() {
                                             {showWorkoutChart ? "View Program" : "View Breakdown"}
                                         </Button>
                                     </div>
-                                    <div className="bg-gradient-to-b from-white/[0.04] to-transparent rounded-3xl border border-white/[0.05] overflow-hidden p-3 h-full min-h-[350px]">
+                                    <div className="bg-gradient-to-b from-white/[0.04] to-transparent rounded-3xl border border-white/[0.05] overflow-hidden p-3 min-h-[350px]">
                                         {showWorkoutChart ? (
-                                            <div className="h-[320px] w-full mt-4">
-                                                <ResponsiveContainer width="100%" height="100%">
-                                                    <PieChart>
-                                                        <Pie data={workoutChartData} cx="50%" cy="50%" innerRadius={60} outerRadius={80} paddingAngle={5} dataKey="value">
-                                                            {workoutChartData.map((entry: any, index: number) => (
-                                                                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} stroke="rgba(255,255,255,0.1)" />
-                                                            ))}
-                                                        </Pie>
-                                                        <Tooltip contentStyle={{ backgroundColor: '#030303', borderColor: 'rgba(255,255,255,0.1)', borderRadius: '12px' }} itemStyle={{ color: '#fff' }} />
-                                                        <Legend wrapperStyle={{ paddingTop: '20px' }} />
-                                                    </PieChart>
-                                                </ResponsiveContainer>
+                                            <div className="flex flex-col md:flex-row h-auto min-h-[320px] w-full mt-4 gap-4">
+                                                <div className="flex-1 min-h-[300px]">
+                                                    <ResponsiveContainer width="100%" height="100%">
+                                                        <PieChart>
+                                                            <Pie
+                                                                data={workoutChartData}
+                                                                cx="50%" cy="50%"
+                                                                innerRadius={60} outerRadius={80}
+                                                                paddingAngle={5} dataKey="value"
+                                                                onMouseEnter={(_, index) => setActiveWorkoutIdx(index)}
+                                                                onClick={(_, index) => setActiveWorkoutIdx(activeWorkoutIdx === index ? null : index)}
+                                                            >
+                                                                {workoutChartData.map((entry: any, index: number) => (
+                                                                    <Cell
+                                                                        key={`cell-${index}`}
+                                                                        fill={COLORS[index % COLORS.length]}
+                                                                        stroke="rgba(255,255,255,0.1)"
+                                                                        className="transition-all duration-300 cursor-pointer hover:opacity-80"
+                                                                        style={{ filter: activeWorkoutIdx === index ? `drop-shadow(0 0 8px ${COLORS[index % COLORS.length]})` : 'none' }}
+                                                                    />
+                                                                ))}
+                                                            </Pie>
+                                                            <Tooltip contentStyle={{ backgroundColor: '#030303', borderColor: 'rgba(255,255,255,0.1)', borderRadius: '12px' }} itemStyle={{ color: '#fff' }} />
+                                                        </PieChart>
+                                                    </ResponsiveContainer>
+                                                </div>
+
+                                                {/* Details Panel for Workout Chart */}
+                                                <div className="w-full md:w-64 bg-black/40 rounded-2xl p-5 border border-white/5 flex flex-col transition-all duration-300">
+                                                    {activeWorkoutDetails ? (
+                                                        <div className="animate-in fade-in zoom-in-95 duration-200">
+                                                            <div className="text-xs uppercase tracking-wider text-white/40 mb-1">Target Muscle</div>
+                                                            <div className="text-xl font-bold text-white/90 mb-4 pb-2 border-b border-white/10" style={{ color: COLORS[activeWorkoutIdx! % COLORS.length] }}>
+                                                                {activeWorkoutDetails.target}
+                                                            </div>
+                                                            <div className="space-y-3 overflow-y-auto max-h-[200px] pr-2 custom-scrollbar">
+                                                                {activeWorkoutDetails.workouts.map((w: any, i: number) => (
+                                                                    <div key={i} className="text-sm">
+                                                                        <div className="font-medium text-white/80">{w.Exercise || w.exercise || w.exercise_name}</div>
+                                                                        <div className="text-white/40text-xs font-mono mt-0.5">{w.Sets || w.sets} × {w.Reps || w.reps}</div>
+                                                                    </div>
+                                                                ))}
+                                                            </div>
+                                                        </div>
+                                                    ) : (
+                                                        <div className="flex-1 flex flex-col items-center justify-center text-center text-white/30 h-full min-h-[200px]">
+                                                            <Target className="w-8 h-8 mb-3 opacity-50" />
+                                                            <p className="text-sm">Select a muscle group to view prescribed movements.</p>
+                                                        </div>
+                                                    )}
+                                                </div>
                                             </div>
                                         ) : (
                                             <div className="overflow-hidden rounded-2xl border border-white/5 h-full">
@@ -228,18 +278,58 @@ export default function FormPage() {
                                         </Button>
                                     </div>
                                     {showDietChart ? (
-                                        <div className="bg-gradient-to-b from-white/[0.04] to-transparent rounded-3xl p-6 border border-white/[0.05] h-[380px] w-full">
-                                            <ResponsiveContainer width="100%" height="100%">
-                                                <PieChart>
-                                                    <Pie data={dietChartData} cx="50%" cy="50%" innerRadius={60} outerRadius={80} paddingAngle={5} dataKey="value" nameKey="name">
-                                                        {dietChartData.map((entry: any, index: number) => (
-                                                            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} stroke="rgba(255,255,255,0.1)" />
-                                                        ))}
-                                                    </Pie>
-                                                    <Tooltip formatter={(value) => `${value} kcal`} contentStyle={{ backgroundColor: '#030303', borderColor: 'rgba(255,255,255,0.1)', borderRadius: '12px' }} itemStyle={{ color: '#fff' }} />
-                                                    <Legend wrapperStyle={{ paddingTop: '20px' }} />
-                                                </PieChart>
-                                            </ResponsiveContainer>
+                                        <div className="bg-gradient-to-b from-white/[0.04] to-transparent rounded-3xl p-6 border border-white/[0.05] min-h-[380px] w-full flex flex-col md:flex-row gap-6">
+                                            <div className="flex-1 min-h-[300px]">
+                                                <ResponsiveContainer width="100%" height="100%">
+                                                    <PieChart>
+                                                        <Pie
+                                                            data={dietChartData}
+                                                            cx="50%" cy="50%"
+                                                            innerRadius={60} outerRadius={80}
+                                                            paddingAngle={5} dataKey="value" nameKey="name"
+                                                            onMouseEnter={(_, index) => setActiveDietIdx(index)}
+                                                            onClick={(_, index) => setActiveDietIdx(activeDietIdx === index ? null : index)}
+                                                        >
+                                                            {dietChartData.map((entry: any, index: number) => (
+                                                                <Cell
+                                                                    key={`cell-${index}`}
+                                                                    fill={COLORS[index % COLORS.length]}
+                                                                    stroke="rgba(255,255,255,0.1)"
+                                                                    className="transition-all duration-300 cursor-pointer hover:opacity-80"
+                                                                    style={{ filter: activeDietIdx === index ? `drop-shadow(0 0 8px ${COLORS[index % COLORS.length]})` : 'none' }}
+                                                                />
+                                                            ))}
+                                                        </Pie>
+                                                        <Tooltip formatter={(value) => `${value} kcal`} contentStyle={{ backgroundColor: '#030303', borderColor: 'rgba(255,255,255,0.1)', borderRadius: '12px' }} itemStyle={{ color: '#fff' }} />
+                                                    </PieChart>
+                                                </ResponsiveContainer>
+                                            </div>
+
+                                            {/* Details Panel for Diet Chart */}
+                                            <div className="w-full md:w-64 bg-black/40 rounded-2xl p-6 border border-white/5 flex flex-col transition-all duration-300">
+                                                {activeDietIdx !== null && dietChartData[activeDietIdx] ? (
+                                                    <div className="animate-in fade-in zoom-in-95 duration-200">
+                                                        <div className="text-xs uppercase tracking-wider text-white/40 mb-1">Meal Content</div>
+                                                        <div className="text-xl font-bold text-white/90 mb-2" style={{ color: COLORS[activeDietIdx % COLORS.length] }}>
+                                                            {dietChartData[activeDietIdx].name}
+                                                        </div>
+                                                        <div className="text-sm text-white/70 leading-relaxed mb-4 pb-4 border-b border-white/10">
+                                                            {dietChartData[activeDietIdx].food}
+                                                        </div>
+                                                        <div className="flex items-end justify-between">
+                                                            <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-white/60">
+                                                                {dietChartData[activeDietIdx].value}
+                                                            </div>
+                                                            <div className="text-xs font-medium text-white/40 uppercase mb-1">Kcal</div>
+                                                        </div>
+                                                    </div>
+                                                ) : (
+                                                    <div className="flex-1 flex flex-col items-center justify-center text-center text-white/30 h-full min-h-[200px]">
+                                                        <Utensils className="w-8 h-8 mb-3 opacity-50" />
+                                                        <p className="text-sm">Select a meal block to view full nutrition details.</p>
+                                                    </div>
+                                                )}
+                                            </div>
                                         </div>
                                     ) : (
                                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
