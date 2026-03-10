@@ -1,0 +1,106 @@
+{
+    "home_lose": [
+        {
+            "exercise_name": "Hands-Elevated Push-Up",
+            "sets": 3,
+            "reps": "12-15",
+            "target_muscle": "Chest"
+        },
+        {
+            "exercise_name": "Alien Squat",
+            "sets": 3,
+            "reps": "12-15",
+            "target_muscle": "Quadriceps"
+        },
+        {
+            "exercise_name": "Pull-Up",
+            "sets": 3,
+            "reps": "12-15",
+            "target_muscle": "Lats"
+        },
+        {
+            "exercise_name": "Gorilla Chin/Crunch",
+            "sets": 3,
+            "reps": "12-15",
+            "target_muscle": "Abdominals"
+        }
+    ],
+    "home_build": [
+        {
+            "exercise_name": "Pushups",
+            "sets": 4,
+            "reps": "8-10",
+            "target_muscle": "Chest"
+        },
+        {
+            "exercise_name": "Jumping Rope",
+            "sets": 4,
+            "reps": "8-10",
+            "target_muscle": "Quadriceps"
+        },
+        {
+            "exercise_name": "Pullups",
+            "sets": 4,
+            "reps": "8-10",
+            "target_muscle": "Lats"
+        },
+        {
+            "exercise_name": "Elbow Plank",
+            "sets": 4,
+            "reps": "8-10",
+            "target_muscle": "Abdominals"
+        }
+    ],
+    "gym_lose": [
+        {
+            "exercise_name": "Leverage Incline Chest Press",
+            "sets": 3,
+            "reps": "12-15",
+            "target_muscle": "Chest"
+        },
+        {
+            "exercise_name": "Narrow Stance Hack Squats",
+            "sets": 3,
+            "reps": "12-15",
+            "target_muscle": "Quadriceps"
+        },
+        {
+            "exercise_name": "Machine Seated Row",
+            "sets": 3,
+            "reps": "12-15",
+            "target_muscle": "Lats"
+        },
+        {
+            "exercise_name": "Bench Barbell Roll-Out",
+            "sets": 3,
+            "reps": "12-15",
+            "target_muscle": "Abdominals"
+        }
+    ],
+    "gym_build": [
+        {
+            "exercise_name": "Butterfly",
+            "sets": 4,
+            "reps": "8-10",
+            "target_muscle": "Chest"
+        },
+        {
+            "exercise_name": "Single-Leg Press",
+            "sets": 4,
+            "reps": "8-10",
+            "target_muscle": "Quadriceps"
+        },
+        {
+            "exercise_name": "Reverse-Grip Lat Pull-Down",
+            "sets": 4,
+            "reps": "8-10",
+            "target_muscle": "Lats"
+        },
+        {
+            "exercise_name": "Ab Crunch Machine",
+            "sets": 4,
+            "reps": "8-10",
+            "target_muscle": "Abdominals"
+        }
+    ]
+}
