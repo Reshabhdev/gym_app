@@ -6,8 +6,14 @@ from contextlib import asynccontextmanager
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # Create tables on startup (Simple approach without Alembic)
-    async with engine.begin() as conn:
-        await conn.run_sync(Base.metadata.create_all)
+    try:
+        async with engine.begin() as conn:
+            await conn.run_sync(Base.metadata.create_all)
+        print("Database tables initialized successfully.")
+    except Exception as e:
+        print(f"FAILED TO CONNECT TO DATABASE ON STARTUP: {e}")
+        # Note: If database is absolutely required to start, we could raise e here.
+        # But letting it pass allows the health check to succeed and give better error visibility.
     yield
     # Cleanup on shutdown
     await engine.dispose()

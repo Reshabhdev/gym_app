@@ -14,9 +14,17 @@ DATABASE_URL = os.getenv(
     "postgresql+asyncpg://rishabhdevsingh@localhost/gym_ai"
 )
 
-# Create the async engine
-# echo=True will print all generated SQL queries to the console for debugging
-engine = create_async_engine(DATABASE_URL, echo=True)
+# Render uses `postgres://` for its internal URLs, but SQLAlchemy async requires `postgresql+asyncpg://`
+if DATABASE_URL.startswith("postgres://"):
+    DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql+asyncpg://", 1)
+elif DATABASE_URL.startswith("postgresql://") and "asyncpg" not in DATABASE_URL:
+    DATABASE_URL = DATABASE_URL.replace("postgresql://", "postgresql+asyncpg://", 1)
+
+try:
+    engine = create_async_engine(DATABASE_URL, echo=True)
+except Exception as e:
+    print(f"CRITICAL ERROR: Failed to create async engine: {e}")
+    raise
 
 # Create an async session maker to instantiate sessions per request
 async_session = async_sessionmaker(
