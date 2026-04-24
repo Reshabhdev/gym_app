@@ -20,6 +20,13 @@ if DATABASE_URL.startswith("postgres://"):
 elif DATABASE_URL.startswith("postgresql://") and "asyncpg" not in DATABASE_URL:
     DATABASE_URL = DATABASE_URL.replace("postgresql://", "postgresql+asyncpg://", 1)
 
+# Enforce SSL/TLS for remote databases (like Render, Neon, Supabase)
+if "localhost" not in DATABASE_URL and "127.0.0.1" not in DATABASE_URL:
+    if "?" not in DATABASE_URL:
+        DATABASE_URL += "?ssl=require"
+    elif "ssl=" not in DATABASE_URL:
+        DATABASE_URL += "&ssl=require"
+
 try:
     engine = create_async_engine(DATABASE_URL, echo=True)
 except Exception as e:
