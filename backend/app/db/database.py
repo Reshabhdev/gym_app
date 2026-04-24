@@ -31,15 +31,27 @@ if "&ssl=require" in DATABASE_URL:
 engine_kwargs = {
     "echo": True,
     "pool_pre_ping": True,
-    "pool_recycle": 3600,
+    "pool_recycle": 1800,
 }
 
-# Enforce SSL/TLS for remote databases safely (like Render, Neon, Supabase)
+# Base connect_args which disable prepared statements (fixes connection drops with PgBouncer proxy on Render/Supabase)
+connect_args = {
+    "command_timeout": 60,
+    "server_settings": {"jit": "off"},
+}
+
+# For asyncpg, disable statement cache for PgBouncer compatibility
+connect_args["prepared_statement_cache_size"] = 0
+connect_args["statement_cache_size"] = 0
+
+# Enforce SSL/TLS for remote databases safely
 if "localhost" not in DATABASE_URL and "127.0.0.1" not in DATABASE_URL:
     ssl_context = ssl.create_default_context()
     ssl_context.check_hostname = False
     ssl_context.verify_mode = ssl.CERT_NONE
-    engine_kwargs["connect_args"] = {"ssl": ssl_context}
+    connect_args["ssl"] = ssl_context
+
+engine_kwargs["connect_args"] = connect_args
 
 try:
     engine = create_async_engine(DATABASE_URL, **engine_kwargs)
